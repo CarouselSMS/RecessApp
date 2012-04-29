@@ -1,0 +1,7 @@
+%h1= @page_title = 'Edit Offer'
+- form_for @offer do |f|
+  = render :partial => "form", :locals => { :f => f }
+  .commit
+    = f.submit "Update Offer"
+    or
+    = link_to "Cancel", offers_path

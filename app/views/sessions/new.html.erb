@@ -1,0 +1,39 @@
+<%= @page_title = "Login" %>
+
+<% content_for :description_header, "Login" %>
+<% content_for :header_class, "login-header" %>
+
+<% content_for :subpagetopcontent do %>
+  <div id="subpage-top-content">
+    <div id="subpage-main">
+      <div id="subpage-left">
+<% end %>
+
+<% content_for :subpageleftcontent do %>
+
+  <% form_tag session_path do -%>
+  <p><label for="login">Login</label>
+  <%= text_field_tag 'login' %></p>
+
+  <p><label for="password">Password</label>
+  <%= password_field_tag 'password' %></p>
+
+  <p><label for="remember_me">Remember me:</label>
+  <%= check_box_tag 'remember_me' %></p>
+
+  <p><%= submit_tag 'Log in' %></p>
+  <% end -%>
+
+  <p><%= link_to('Forgot your password?', forgot_password_url) %></p>
+  <p><%= link_to 'Launch the application in a popup', webapp_demo_path, :target => 'new', :class => 'launch-app webapp-popup png' %></p>
+  </div> <!-- #subpage-left -->
+</div><!-- #subpage-main -->
+<% end %>
+
+<% content_for :subpagesidebar do %>
+<div id="subpage-sidebar" class="content-sidebar">
+  <h3>Log in here.</h3>
+  <%= flash_notices %>
+ </div> <!-- #subpage-sidebar -->
+</div> <!-- missing closing div -->
+<% end %>

@@ -1,0 +1,24 @@
+= @page_title = "Third party integration"
+- content_for :description_header, "Third party integration."
+- content_for :header_class, "integration-header"
+- content_for :subpagetopcontent do
+  = render :partial =>  "subpagetopcontent", :locals => { :header => "Third party integration" }
+- content_for :subpageleftcontent do
+  %p
+    Recess Paging System is built on top of our own advanced SMS platform that allows for great flexibility in development. With carrier-grade connectivity and an open architecture, Recess makes it easy to integrate text-message paging into your existing software.
+  %p
+    Recess maintains both public and private application programming interfaces (APIs), both of which are available for use depending on the implementation and needs of your software.
+  %p
+    For an example of our platform&rsquo;s capabilities, our public API and documentation can be found here:
+    %br
+    %a{ :href => "http://privatelabelsms.com/api", :title => "Private Label SMS API documents" }<>
+      SMS API documentation
+  %p
+    If you are interested in integrating Recess, please contact us below.
+  .integration-form
+    = render :partial => "integration_form"
+  :plain
+    </div> <!-- #subpage-left -->
+    </div><!-- #subpage-main -->
+- content_for :subpagesidebar do
+  = render :partial =>  "subpagesidebar_main", :locals => { :sidebar_header => "Are you ready for Recess?", :sidebar_subheader => "Give your guests freedom and the quality of service they deserve. Happy guests means more money in your pocket." }

@@ -1,0 +1,44 @@
+= @page_title = "About Us"
+- content_for :description_header, "Here's a little bit about us. For more, visit our parent site, <a href='http://www.recessmobile.com' title='External link to recessmobile.com'>Recess Mobile</a>."
+- content_for :header_class, "about-header"
+- content_for :subpagetopcontent do
+  = render(:partial =>  "subpagetopcontent", :locals => { :header => "About Us" })
+- content_for :subpageleftcontent do
+  .about-content
+    %h3 We Love SMS
+    %p We LOOOVE SMS. That stands for <strong>s</strong>hort <strong>m</strong>essage <strong>s</strong>ervice, or what's commonly known as text messaging. We love it so much, we try to use it any way we can to solve problems facing consumers and businesses on a daily basis.
+    %p
+      Take&nbsp;
+      %a{ :href => "http://antitow.com" }<>
+        AntiTow
+      \, for example. We created AntiTow because it's hard to remember to move your car every first and third Monday of every month between April and October before 8am to avoid the street sweeping trucks. Thousands of people, including us, have been towed. So, we created a simple notification system that sends out a text message alert the day before and day of street sweeping, processing public calendar feeds into text messages.
+    %h3 Why do we love SMS so much?
+    %p It's simple. It's powerful. It's ubiquitous. And its constraints impose a certain elegance to any solution we devise.
+    %p The beauty lies in its simplicity. You can have a voice conversation with thousands of words, but get to the point in 160 characters. 
+    %h3 About Recess
+    %p Recess was built to solve a real problem, that of <em>waiting</em>. In a lifetime, we spend at least <a href="http://answers.google.com/answers/threadview?id=439013">3 years</a> just <em>waiting</em>. Wouldn't you like to get some of that time back? We know we would. With Recess, you can walk into your favorite (or better yet, least favorite - how about a DMV?) establishment, check in with your cell phone number and then go do what you want during your wait. Using SMS, you now have a direct line of communication with the establishment. Go take a Recess, we'll let you know when it's time to come in.
+    %h3 <a href="http://www.recessmobile.com/sub/team/" title="External link to recessmobile.com">About the Founders</a>
+    %h3 Contact Information
+    %blockquote
+      595 1/2 S. 3rd St.
+      Columbus, Ohio 43215
+    %blockquote
+      <strong>(810) 3RECESS &mdash; (810) 373-2377</strong>
+    %ul
+      %li
+        Sales Questions:
+        =mail_to "sales@recessapp.com", nil, :encode => "hex"
+      %li
+        General Questions:
+        =mail_to "contact@recessapp.com", nil, :encode => "hex"
+      %li
+        Support Questions:
+        =mail_to "support@recessapp.com", nil, :encode => "hex"
+      %li
+        Twitter:
+        =link_to "@recessapp", "http://www.twitter.com/recessapp"
+  :plain
+    </div> <!-- #subpage-left -->
+    </div><!-- #subpage-main -->
+- content_for :subpagesidebar do
+  = render :partial =>  "subpagesidebar_main", :locals => { :sidebar_header => "Are you ready for Recess?", :sidebar_subheader => "Give your guests freedom and the quality of service they deserve. Happy guests means more money in your pocket." }

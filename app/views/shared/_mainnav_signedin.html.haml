@@ -1,0 +1,14 @@
+%ul.png.signedin
+  - if admin_subdomain?
+    %li= tab_link_to :subscriptions,  'Subscriptions',  admin_subscriptions_path
+    %li= tab_link_to :accounts,       'Accounts',       admin_accounts_path
+    %li= tab_link_to :plans,          'Plans',          admin_subscription_plans_path
+    %li= tab_link_to :discounts,      'Discounts',      admin_subscription_discounts_path
+    %li= tab_link_to :affiliates,     'Affiliates',     admin_affiliates_path
+  - else
+    - if admin?
+      %li= tab_link_to :account,      'Account',        account_url
+    %li= tab_link_to :offers,         'Offers',         offers_path
+    %li= tab_link_to :subscribers,    'Subscribers',    subscribers_path
+    %li= tab_link_to :messages,       'Messages',       messages_path
+    %li= tab_link_to :statistics,     'Statistics',     statistics_path

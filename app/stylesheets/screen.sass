@@ -1,0 +1,1753 @@
+@import base.sass
+
+
+body
+  :background url(/images/recess-header-bknd.jpg) repeat-x
+  :border-top= !top_nav_bg 3px "solid"
+  :color= !color_content
+a, p a
+  :color= !color_content
+  :font-weight 700
+  +unstyled-link
+a:link, a:visited, p a:link, p a:visited
+  +unstyled-link
+  :color= !link_color_audience
+  :cursor pointer
+a:hover, p a:hover
+  +unstyled-link
+  :color= !link_hover_audience
+  :cursor pointer
+a.blue
+  :color= !blue
+  :font-weight 700
+a.blue:hover
+  :color= !color_content
+a.guillemot
+  :text-decoration none
+  :line-height 1.0em
+  :vertical-align text-top
+  span
+    :margin-right 0.2em
+span.guillemot
+  :margin-right 0.2em
+  :color= !gallery_type
+.ss_sprite
+  :position relative
+  :vertical-align top
+  :padding-bottom 0
+ul li a span.guillemot
+  :margin-right 0.4em
+.showgrid
+  :background-image url(/images/grid.png) !important
+h1
+  :font-size 2.5em
+  :color= !color_content
+h3
+  :color= !subpage_blue
+  :font-weight 700
+  :font-size 1.3em
+input, textarea
+  :margin 0.5em 0
+  :padding 5px
+input[type="text"], input[type="password"], textarea
+  :border= 1px "solid" #BBBBBB
+  :background #FFFFFF
+  :padding 5px
+  &:focus
+    :border= 1px "solid" #666666
+input[type="submit"]
+  :cursor pointer
+label
+  :display block
+  :margin 0.5em 0
+textarea
+  :width 360px
+blockquote
+  :font-style normal
+.form-example
+  :color= !color_content
+.submit-button
+  :background url(/images/button-sprite.png) no-repeat top
+  :border 0
+  :width 81px
+  :height 24px
+  :color= !color_content
+  :font-weight 700
+  :font-size 1em
+  :overflow visible
+  :margin 0.5em 0
+.submit-button:hover
+  :background-position bottom
+  :color #FFF
+a.view-demo
+  :display block
+  :height 93px
+  :width 184px
+  :text-indent -9000px
+  :background url(/images/view-demo.png) repeat-y 0 92px
+  :margin-top -1.5em
+  :margin-left 1em
+a.viewDemo-off
+  :background url(/images/view-demo.png) repeat-y 0 92px
+a.viewDemo-on
+  :background url(/images/view-demo.png) repeat-y 0 0
+p.demo-link
+  :margin-left 1.75em
+  :margin-top 0.8em
+.tip img
+  :cursor help
+  :position absolute
+  :margin 1px 0 0 2px
+div.fieldWithErrors
+  :display inline
+  input, textarea
+    :border-color #f00
+.gt-error, #error
+  :background-color #cc0000
+  :padding .5em
+  :color #fff
+  :margin-bottom 1em
+.gt-notice-box
+  :border 3px solid #aaa
+  :padding 1em
+  :background-color #f5f9ea
+.gt-success, #notice
+  :background-color #6caa00
+  :padding .5em
+  :color #fff
+  :margin-bottom 1em
+.submit-sprite
+  :display none
+#toppanel
+  +container
+  :padding 0
+  :font-size 1em
+  :position absolute
+  :top 0
+  :left 0
+  :width 100%
+  :z-index 999
+  :margin 0 auto
+  :overflow hidden
+  h3
+    :font-size 2em
+    :margin-bottom 0
+  h4
+    :margin-bottom 0.5em
+  p
+    :margin 0 0 0.7em
+  p.panel-tour
+    :display inline
+    :float left
+    :margin 0.5em 0.5em 0.5em 1em
+    a
+      :margin-left 0.5em
+  ul
+    :margin 0
+    :margin-bottom 0.5em
+    li
+      :list-style-type disc
+      :margin-left 1em
+      :font-weight 700
+  .top-nav-container
+    :float right
+    :position relative
+    :right 15%  
+  ul.panel-nav
+    +horizontal-list
+    :float left
+    +last
+    li
+      :display inline
+      :height 21px
+      :text-transform uppercase
+      :background url(/images/top-nav-bar.png) center no-repeat
+      :background-color= !top_nav_bg
+    li.first-child
+      :border-right= 1px "solid" #CCC
+      :background url(/images/top-nav-bar.png) top left
+      :padding-left 20px
+      :padding-right 0
+      :margin 0
+    li.close
+      a
+        :color #000
+    li.last-child
+      :background url(/images/top-nav-bar.png) top right
+      :padding-right 14px
+      :border-left= 1px "solid" #CCC
+    li.admin-view a
+      :color #000
+      :cursor default
+      :text-transform uppercase
+    a
+      :margin-left 2px
+      :padding 5px 5px 0 0
+      :float left
+      :text-decoration none
+      :display inline
+      :font-weight 400
+      :background-color= !top_nav_bg
+      :font-size 0.9em
+      :line-height 1em
+      :height 16px
+  a.launch-app
+    :display inline-block
+    :background url(/images/launch-application.png) 0 0
+    :float left
+    :margin-right -25px
+    :height 21px
+    :width 141px
+    :text-indent -9000em
+    &:hover
+      :background-position 0 21px
+  iframe
+    :margin 0 auto
+    :display block
+  .panelContent
+    +container
+    :color= !color_content
+    :text-align left
+    div
+      :margin-top 1em
+      :margin-bottom 1em
+    textarea, input
+      :width 90%
+      :height 100%
+    .threeA
+      +prepend(1)
+      +column(5)
+      +append(1)
+    .threeB
+      +column(5)
+      +append(1)
+    .threeC
+      +column(5, true)
+      +append(1)
+    .twoA
+      +prepend(1)
+    .twoB
+      +append(1)
+      +no-bullets
+  #signupPanel
+    li
+      +span(6)
+    .panelContent
+      #signup-box
+        :margin-top 0
+      h4.app-store
+        a
+          :margin 2em 1.2em
+      h2
+        :color= !subpage_blue
+        :font-size 2.3em
+        :font-weight 700
+        :margin-bottom 0
+        :margin-top 0
+      h3
+        :color= !color_content
+        :margin 0.5em 0
+        :text-align center
+      h4
+        :text-align center
+      h5
+        :line-height 1em
+        :text-align center
+      .twoA
+        +column(7)
+        +append(1)
+        :margin 0
+        :height 100%
+      .twoB
+        +column(9, true)
+        :margin 0
+        :height 100%
+      .iframe-container
+        :padding 1em
+        :border-bottom= 1px "dotted" #CCC
+        h5
+          :margin-bottom 0.5em
+          br
+            :margin-bottom 0
+          img
+            :border= 1px "solid" !gallery_border
+            :margin-top 2.5em
+      .selected
+        :background #FFE99D
+      br
+        :margin-bottom 1em
+      .mailing-address
+        +column(4)
+      .call-us
+        +column(3, true)
+  #contactPanel
+    .panelContent
+      .twoA
+        +column(6)
+      .twoB
+        +column(11, true)
+        textarea
+          :height 150px
+  #contactPanel, #signupPanel
+    :background-color #EFEFEF
+#header
+  +container
+  :height 29px
+  :overflow hidden
+  :padding-top 3em
+  #logo
+    +column(5)
+    a
+      :line-height 0.5em
+      +column(5)
+      :height 29px
+      :cursor pointer
+      :text-indent -9999em
+      :background url(/images/main-sprite.png) repeat 0px -564px
+    .signedin
+      :background-position 0px -593px
+    .blog
+      :background-position 0px -622px
+  #header-nav
+    +column(14, true)
+    :background url(/images/main-sprite.png) no-repeat scroll 376px -52px
+    :height 29px
+    :float left
+    :width 432px
+    :margin-left 84px
+    ul
+      +horizontal-list(0)
+      :background url(/images/main-sprite.png) no-repeat scroll -10px -52px
+      :padding-left 15px
+      :height 29px
+      :margin-left 4px
+      a
+        :background #FFF url(/images/main-sprite.png) no-repeat scroll -10px -195px
+        :padding 0 1em 0 2.5em
+        :color= !link_color_sky
+        :text-decoration none
+        :font-size 1.1em
+        :font-weight 700
+        :height 29px
+        :float left
+        :display inline
+        :line-height 1.5em
+        &:hover
+          :color= !link_hover_color
+      li a
+        :padding-top 7px
+      a.active
+        :color= !link_hover_color
+      a.business-owners
+        :background-position 0 0
+      a.marketers
+        :background-position 0 -31px
+      a.guests
+        :background-position 0 -62px
+        :padding-right 0
+      a.no-icon
+        :background-position -10px -196px
+        :padding-left 1em
+      a.no-bg
+        :background-image none
+        :padding-left 0.5em
+      li.blog
+        :background url(/images/main-sprite.png) -10px -246px
+      a.blog
+        :background #EFEFEF
+        :margin-left 25px
+        :padding-left 14px
+        :padding-right 10px
+        :color #929292
+        &:hover
+          :color= !link_hover_color
+      .last-item
+        :padding-right 0
+    ul.signedin
+      :margin 0
+      a
+        :background= !signed_in
+        :color #FFF
+        :padding 0.6em 0.9em
+        &:hover, &.active
+          :color= !link_color_sky
+  #header-nav.signedin, #header-nav.signedin ul
+    :background url(/images/header-nav-bar-blk.png) no-repeat scroll
+  #header-nav.signedin
+    :background-position right top
+    :width 442px
+    :margin-left 69px
+  #header-nav.signedin ul
+    :background-position left top
+  #header-nav.signedin ul
+    :padding 0 0 0 20px
+  #header-nav.signedin.globaladmin
+    :margin-left 50px
+    :width 460px
+  #header-nav.signedin.notadmin
+    :margin-left 150px
+    :width 360px
+  #header-nav.signedin.admin
+    :margin-left 70px
+    :width 440px
+#header-box
+  +container
+  :border-top= 5px "solid" #FFF
+  :margin 0 auto 1em
+  .clearfix
+    :height 0
+  a.logo-header
+    :padding-top 2em
+    :display block
+    :width 712px
+    :background #FFF url(/images/main-sprite.png) no-repeat 31px -285px
+    :text-indent -9999em
+  h2
+    :font-size 2.65em
+    :margin 0
+    :color= !simple_messaging
+    :font-weight 700
+    :text-align center
+    :line-height 1em
+    :background-color #FFF
+    :float left
+  h3
+    a
+      :display block
+      :width 712px
+      :text-indent -9000px
+      :margin-top 3em 
+  .main-cta
+    +column(17, true)
+    +prepend(1)
+    +append(1)
+    :margin-bottom 2em
+    :background= #FFF url("/images/banner-image-b.jpg") "no-repeat" "center"
+    :height 225px
+    div
+      :padding-left 16px
+    .cta-header
+      +append(8)
+      +column(9, true)
+      :text-indent -9000em
+      :font-size 2.4em
+      :line-height 2.4em
+    .cta-subHeader
+      +append(9)
+      +column(8, true)
+      :margin-top 0.5em
+      :font-size 1em
+      :color= !color_content
+      :text-align left
+      h4
+        :display inline
+        :font-size 1em 
+      a
+        :color #000
+        :text-decoration none
+        :margin-left 0.2em
+        span
+          :margin-right 0
+        &:hover
+          :color= !link_hover_color 
+    .cta-plans
+      :text-indent -9000em
+      +column(8, true)
+      +append(9)
+      :margin-top 1.5em
+      :margin-left 0
+      a
+        :background url(/images/main-sprite.png) repeat -10px -651px     
+        :display block
+        :height 53px
+        :width 277px
+        &:hover
+          :background-position -10px -704px
+  h3.overlay-image
+    :margin-top 1em
+    a
+      // :background url(/images/header-image-iPhone_app.png) no-repeat center
+      // :height 225px
+      // :background url(/images/3items.png) no-repeat center
+      // :height 240px
+      // :border= 1px "solid" !gallery_border
+      :background url(/images/cover-photo.jpg) no-repeat center
+      :height 240px
+  h3.overlay-text
+    :margin-top -6.8em
+    a
+      :background url(/images/main-image-text-overlay.png) no-repeat center
+      :height 53px    
+  #slogan
+    +column(19, true)
+    :background url(/images/content-slogan.gif) no-repeat center
+    :text-indent -9999em
+    :font-size 2em
+    :line-height 2em
+    :padding 2em 0
+    :height 2em
+#content
+  :border-top= 5px "solid" #FFF
+  :text-align left
+  +container
+  h2
+    :color= !color_content
+    :margin 1em 0
+    :line-height 1.2em
+  h2.subheader
+    :font-weight 700
+    :color= !color_audience_header
+    :margin-bottom 0.2em
+  h3, p
+    :margin-bottom .5em
+  p
+    :text-align left
+    :color= !color_content
+  #demo-the-product, #subpage-bottom-content
+    +container
+    :background url(/images/content-gradient.gif) repeat-x bottom
+  #subpage-top-content
+    a
+      :font-weight 700
+    .feedback-form
+      +column(11, true)
+      :margin-top -5em
+    #subpage-main
+      +column(13)
+      // Because of the transparent text in the big header, we're forcing the width and margin to
+      // Blueprint 13 col + the 10px gutter, to eliminate holes
+      :width 494px
+      :margin-right 0
+      #subpage-header
+        +column(13, true)
+        :width 494px
+        :margin-right 0
+        .top-header
+          +column(10, true)
+          :width 494px
+          :margin-right 0
+          :margin-bottom 0
+          :background #FFF
+          :padding-bottom 1em
+          div
+            +column(3)
+            :background #FFF url(/images/audience-icon.png) repeat-y scroll 0 0.5em
+            :text-indent -9000px
+            :height 6em
+            :margin-top 0.5em
+          .marketers-header
+            :background-position 0 14.5em
+          .business-owners-header
+            :background-position 0 1em
+          .guests-header
+            :background-position 0 6.5em
+          .no-icon-header, .blog-header, .demo-header, .terms-of-service-header, .feedback-form-header, .thanks-header, .integration-header
+            :display none
+          .pricing-header, .features-header, .about-header, .tour-header, .help-header
+            :background none
+          h2
+            +column(8, true)
+            :font-size 1.2em
+            :line-height 1.25em
+            :color= !color_content
+            :font-weight 400
+            :padding 0.5em 0 0.5em
+            :margin-bottom 0
+            :height 3.5em
+          h2.no-icon-header, h2.blog-header, h2.demo-header, h2.terms-of-service-header, h2.feedback-form-header, h2.thanks-header
+            +prepend(1)
+            :display block
+          h2.pricing-header, h2.features-header, h2.about-header, h2.tour-header, h2.help-header
+            :margin-left -5.0em
+            +column(8, true)
+        .big-header
+          +column(13, true)
+          :width 494px
+          :margin 0
+          h1
+            +column(13, true)
+            :background transparent url(/images/subpage-sprite.png) repeat top
+            :text-indent -9999em
+            :margin 0
+            :border-top= 0.5em "solid" #FFF
+            // force width to account for cutout letters
+            :width 494px
+            &.marketers-header
+              :background-position 38px 288px
+              :height 38px
+            &.business-owners-header
+              :background-position 38px 212px
+              :height 38px
+            &.guests-header
+              :background-position 38px 250px
+              :height 38px
+            &.help-header
+              :background-position 38px 125px
+              :height 49px
+            &.blog-header
+              :background-position 38px 174px
+              :height 49px
+            &.demo-header
+              :background-position 38px 76px
+              :height 36px
+            &.terms-of-service-header
+              :background-position 38px 40px
+              :height 38px
+            &.feedback-form-header
+              :background-position 38px 337px
+              :height 38px
+            &.integration-header
+              :background-position 38px 386px
+              :height 49px
+            &.thanks-header
+              :background-position 38px 435px
+              :height 49px
+            &.pricing-header
+              :background-position 38px 485px
+              :height 49px
+            &.features-header
+              :background-position 38px 532px
+              :height 47px
+            &.about-header
+              :background-position 38px 581px
+              :height 49px
+            &.tour-header
+              :background-position 38px 626px
+              :height 49px
+      #subpage-left
+        :background #FFF
+        +column(12, true)
+        :padding-left 38px
+        :padding-top 0
+        :padding-right 10px
+        :min-height 20em
+        :height "auto" !important
+        .affordable
+          +column(11, true)
+          :float left
+          :margin-top 1em
+        .price-container
+          +column(7)
+          h1
+            :font-size 6em
+            :display inline
+          h1.price
+            :color= !blue
+            :font-weight 700
+            :display inline
+        .button-container
+          :margin-top 2em
+          h4, p
+            :display inline
+            :float left
+          h4.or
+            :margin 0.4em
+            :font-weight 700
+          h4.app-store
+            :display block
+            :margin-top 3em
+        .cover-photo-container
+          +column(5, true)
+          :overflow hidden
+          :height 370px
+          :background url(/images/cover-photo2.jpg) no-repeat scroll -40px -25px
+        .about-content
+          +column(11, true)
+          h3, p
+            :margin 1em 0
+        .integration-form
+          +column(11, true)
+          :margin-top 2em
+        #view-demo.subpage-tour
+          :text-indent 0
+          :margin-left 290px
+          :margin-top -11em
+          :margin-bottom 2em
+          p.demo-link
+            :margin-top 0.3em
+            :margin-left 1.5em
+    #subpage-sidebar
+      +column(5, true)
+      +append(1)
+      :background #FFF
+      :height 397px
+      :padding-top 1em
+      a
+        :text-decoration none
+      a:hover
+        :text-decoration none
+      #cta-box, .cta-box, .tour-sidebar
+        +column(5, true)
+        :overflow hidden
+        h3
+          :font-size 1.5em
+          :font-weight 700
+          :padding 0.4em 0.5em 0.5em
+          :color #dc9e39
+          :margin-bottom 0
+        p
+          :font-size .9em
+          :color #737373
+          :padding 0 0.7em
+        h4
+          a
+            :margin-left 0.5em
+      .cta-box
+        :background transparent url(/images/sidebar-box-5col_long.png) repeat top
+        :margin-bottom 1em
+        :border-bottom= 1px "solid" !gallery_border
+      .step1
+        :margin-top 0.5em
+      #view-demo
+        :float left
+        :margin-top 2em
+        a.view-demo
+          :margin-left 3em
+        a.demo-link
+          :margin-left 5em
+      .sidebar-form
+        :margin-top 2em
+        ul, li
+          +no-bullets
+        ul
+          :margin-left 0.7em
+          :margin-right 1.7em
+        input
+          :width 100%
+      #quote
+        +column(5, true)
+        :visibility visible
+        :height 350px
+        :overflow-x hidden
+        :overflow-y auto
+        blockquote
+          :padding 0
+          :margin 1em 0.2em
+          :font-size 1.7em
+          :font-style normal
+          :line-height 1.1em
+          :text-align left
+          :color= !color_content
+          &:before, &:after
+            :display block
+            :font-size 5em
+            :width 50px
+          &:before
+            :margin 0
+            :background url(/images/quote.png)
+            :display block
+        q
+          :quotes " o "
+          :margin-left -10px
+        span
+          :white-space nowrap
+        cite
+          :margin 0.1em 0
+          :font-style normal
+          :font-size 0.9em
+          :color= !quote_cite
+          :font-weight 400
+    #subpage-sidebar.content-sidebar
+      a
+        :font-size 1.3em
+      h3
+        :margin 0.4em 0 1em 0
+        :border-top= 1px "solid" #B3DCEF
+        :padding-top 1em
+      hr
+        :color= !subpage_blue
+      ul, li, li ul
+        +no-bullets
+        :margin 0
+      li
+        :margin-top 0.5em
+  #subpage-bottom-content
+    :margin 0 0 3em 0
+    :float left
+    a, a:hover
+      :text-decoration none
+    p
+      :margin-bottom 1em
+      a, a:hover
+        :text-decoration none
+    h2
+      :margin 1.0em 0 0.2em
+      :font-weight 700
+    #subheader
+      +prepend(1)
+      +column(17, true)
+      +append(1)
+      :margin 2em 0
+      h4
+        +column(10, true)
+        :padding 0
+        :margin 0
+        :font-size 1.2em
+        :color= !color_content
+    #sub-left
+      +column(5)
+      +prepend(1)
+    #sub-middle
+      +column(5)
+      +prepend(1)
+      +append(1)
+    #sub-right
+      +column(5, true)
+      +append(1)
+    .benefits-header
+      :float left
+      +prepend(1)
+      +column(17, true)
+      +append(1)
+    .pricing-details
+      :margin-bottom 2em
+      ul
+        :margin 1em 0 0 0
+      // ul, ul li
+      ul li h3
+        :color= !color_content
+        :font-weight 400
+        :font-size 2em
+        :margin 1em 0
+      h2.subheader
+        :color= !subpage_blue
+        :font-weight 700
+  #demo-the-product
+    :height 130px
+    :margin-top 0
+    :margin-bottom 4em
+    a
+      :font-weight 700
+      :font-size 1.2em
+      :text-decoration none
+      &:hover
+        :text-decoration none
+    #what-is-recess
+      +column(17)
+      +prepend(1)
+      +append(1)
+      h2
+        :margin 0
+    #easy-to-use
+      +column(10)
+      +prepend(1)
+      :margin-top 1.5em
+      h3
+        :color= !blue
+        :font-weight 700
+        :width 440px
+    #view-demo
+      +column(7, true)
+      .view-demo-left
+        +column(3)
+      .view-demo-right
+        +column(4, true)
+        :margin-top 1.5em
+        a
+          :margin-left 1em
+  .about-recess
+    +container
+    :margin-bottom 4em
+    :float left
+    p a, p a:hover
+      :text-decoration none
+    h1
+      :color= !blue
+    p
+      :font-size 1.1em
+    .what-is-recess
+      +column(8)
+      +prepend(1)
+      +append(1)
+      h1
+        :background url(/images/main-sprite.png) repeat -10px -393px
+        :text-indent -9999em
+    .why-recess
+      +column(8, true)
+      h1
+        :background url(/images/main-sprite.png) repeat 304px 596px
+        :text-indent -9999em
+  #cta
+    div
+      :margin-bottom 2em
+    h3
+      :background url(/images/audience-icon.png) center top no-repeat
+      :font-weight 700
+      :font-size 1.3em
+      a
+        :text-align center
+        :padding-top 4.2em
+        :margin 2em 0 0
+        :color= !color_audience_header
+        :display block
+      a:hover
+        :color= #787878
+    ul
+      :font-size 1.1em
+      :color= !color_content
+      :margin 0.5em 0 0 0
+      a
+        :text-decoration none
+        :cursor pointer
+        :font-weight 700
+      li.last-child
+        :list-style none
+        span
+          :margin-left -1em
+          :margin-right 0.5em
+    #left
+      +column(5)
+      +prepend(1)
+      h3
+        :background-position 22px 0
+    #middle
+      +column(5)
+      +prepend(1)
+      h3
+        :background-position 22px -92px
+    #right
+      +prepend(1)
+      +column(5, true)
+      +append(1)
+      h3
+        :background-position 22px -184px
+  #offers
+    +container
+    :float left
+    :margin 0
+    :padding 0.2em 0
+    :border= 1px "solid" #e3e0e0
+    :width 710px
+  .subpage
+    :background #ffecb2
+    :border 0
+  .home
+    :background #ecf2f0
+    :border #e3e0e0 1px "solid"
+  .home, .subpage
+    #deal
+      +column(4)
+      +prepend(2)
+      :background url(/images/main-sprite.png) repeat 28px -444px
+      h3
+        :font-size 1.5em
+        :padding-top 0.5em
+        :line-height 1em
+    #promo
+      +column(12, true)
+      :padding-top 10px
+      h4
+        :margin 0.1em 0 0
+        :font-weight 700
+        :color= !link_color_audience
+        :margin-bottom 0.3em
+  .subpage
+    #deal
+      :background none
+      :padding 0
+      :margin 0
+      +prepend(1)
+      h3
+        :color #dc8c1d
+        :font-weight 700
+    #promo
+      h5
+        :color #555
+        :margin-bottom 0.2em
+      p
+        :margin 0
+        :font-weight 700
+  .gt-content-plan-wrapper
+    :width 350px
+    fieldset
+      :border 0 none
+      :padding 0
+      legend
+        :color= !subpage_blue
+    h4
+      :margin-bottom 20px
+    h4.plan-description
+      :line-height 1.5em
+      :width 280px
+    h2
+      :margin-bottom 3px
+      :font-size 1.5em
+      :color= !subpage_blue
+    h1
+      :font-weight 700
+      :color= !color_audience_header
+    p.recess-domain
+      :font-weight 700
+      :color= !subpage_blue
+#content.signedin
+  :border-top= 3px "solid" !signed_in
+  :background #FFF
+  :min-height 350px
+  .signedin
+    +prepend(1)
+    +column(17, true)
+    +append(1)
+    :margin-top 1em
+    a
+      :text-decoration none
+    a:hover
+      :text-decoration none
+    h1
+      :font-size 2em
+      :color= !subpage_blue
+      :margin 0.5em 0
+      :font-weight 700
+    h2
+      :font-size 1.6em
+      :color #4C4D49
+      :margin-bottom 10px
+    .preview
+      :float right
+    table
+      :margin-top 0.5em
+      :margin-bottom 0
+    table tbody tr.first-row th, table tbody tr.first-row td label
+      :font-weight 700
+      :color= !subpage_blue
+    table.message_options
+      :margin-top 0
+      :margin-bottom 0.5em
+    table#statistics_filter
+      :width 650px
+      select#filter_from_1i, select#filter_to_1i
+        :width 56px
+      select#filter_from_2i, select#filter_to_2i
+        :width 95px
+      select#filter_from_3i, select#filter_to_3i
+        :width 40px
+    input#filter_submit
+      :margin-bottom 1em
+    table#reports
+      th.label
+        :font-weight 700
+        :color= !subpage_blue
+    th, caption
+      :padding 0 2em 0 0
+    td
+      :padding 0
+    th
+      :font-weight 400
+    textarea
+      :height auto
+      :padding 5px
+      :width 280px
+    .section
+      :clear both
+    fieldset
+      :padding-top 1em
+    form#charge_form
+      :margin-top 1em
+    .preview
+      :float right
+    .preview textarea
+      :border 1px solid #ccc
+      :background #f0f0f0
+      :color #000 !important
+    .sms-meta .counter
+      :padding 0
+    .sms-meta .counter.sms-field-error
+      :background #f00
+      :color #fff
+    .note
+      :color #888
+      :margin-left 0.2em
+    .meta div.note
+      :display inline
+      :margin-right 0.5em
+    .offer
+      :margin-bottom 3em
+      :margin-top 1.5em
+    .offer .index
+      :float left
+      :font-size 250%
+    .offer .meta
+      :float right
+    .offer .data
+      :margin-left 40px
+    .offer label
+      :padding-bottom 2px
+      :font-weight 700
+    .offer .name, .offer .text, .offer .details
+      :border 1px solid #ccc
+      :background #f0f0f0
+      :padding 5px
+      :width 300px
+      :margin-bottom 10px
+    table.message_options
+      :width 410px
+    table.message_options select
+      :width 200px
+    #subscribers
+      :width 200px
+    #messages td
+      :vertical-align top
+    #messages .body
+      :width 360px
+    #messages .parts, #messages .recipients
+      :text-align center
+    #statistics_filter
+      :width 700px
+    #statistics_filter select.location
+      :width 200px
+    #reports .label
+      :width 200px
+    #reports .count
+      :width 100px
+      :text-align center
+    #reports td
+      :padding 5px
+    #billing_info th
+      :width 200px
+    form#new_offer
+      +column(7, true)
+#footer
+  +container
+  :margin 20em auto 0
+  :padding-bottom 1.5em
+  :text-align left
+  // :background url(/images/bg-grass.jpg) no-repeat bottom left
+  h4
+    :margin-bottom 0
+    :font-size 1.1em
+  p
+    :text-align right
+    :margin 0.5em 0 0
+  .pre-footer
+    :float left
+    :margin 0 0 2em 0
+    :padding 0.2em 0
+    :border= 1px "solid" #e3e0e0
+    :width 710px
+    h4
+      +prepend(1)
+      :margin 0.1em 0 0
+      :font-weight 700
+      :color= !quote_cite
+      :margin-bottom 0.3em
+  .news
+    +column(17, true)
+    +prepend(1)
+    +append(1)
+    :margin-bottom 2em
+    p
+      :text-align left
+  .nav
+    +column(18, true)
+    +prepend(1)
+    :margin-bottom 2em
+    h3
+      :margin 0 0 0.5em 0
+    h5
+      :margin-bottom 0.5em
+    ul
+      :float left
+      :list-style-type none
+      :margin 0
+    ul.ffeatures
+      +column(3)
+    ul.fpricing
+      :width 152px
+      :margin-right 0
+    ul.fabout
+      +column(2)
+    ul.fhelp
+      +column(3)
+    ul.fblog
+      +column(2)
+    ul.fbenefits
+      +column(4, true)
+  .nav.signedin ul
+    +column(3)
+    h3 a
+      :color= !signed_in
+      &:hover, &.active
+        :color= !color_content
+    &.fplans
+      +column(5)
+    &.fsubscriptions
+      +column(4)
+    &.fdiscounts
+      +column(5, true)
+  #availability.signedin
+    :visibility hidden
+  a
+    :text-decoration none
+  #bottom-footer
+    +container
+    :float left
+    .footer-mailing
+      +column(10)
+      +prepend(1)
+      :float left
+    .footer-phone
+      +column(7, true)
+      +append(1)
+      :background url(/images/main-sprite.png) repeat 160px -512px
+      p
+        :text-align right
+    div
+      :float left
+      :margin-bottom 0
+      :padding-top 2em
+    p
+      :text-align left
+.home
+  #availability
+    +column(6)
+    +prepend(1)
+  #copyright
+    +prepend(1)
+    +column(10, true)
+    +append(1)
+h4.app-store
+  a
+    :background url(/images/main-sprite.png) repeat -10px -757px
+    :display block
+    :width 200px
+    :height 65px
+    :margin-bottom 0
+    :margin-top 0.5em
+    :text-indent -9999em
+    :float left
+    &:hover
+      :background-position -10px -822px
+
+// Subpage gallery
+.stripViewer
+  :overflow hidden
+  :border= 2px "solid" !gallery_border
+  :background= !gallery_bg
+  :padding 0
+  :position relative
+  :left 0
+  :top 0
+  :width 1%
+  :list-style-type none
+  li
+    :float left
+.stripTransmitter
+  :margin 0
+  :padding 0
+  :position relative
+  a:link, a:visited
+    :width 20px
+    :float left
+    :margin 0 1px 1px 0
+    :text-align center
+    :line-height 22px
+    :background #FFF
+    :color= !gallery_type
+    :text-decoration none
+    :border= 1px "solid" !gallery_border
+  a:hover, a.activeSlide
+    :background= !gallery_bg
+    :color= !gallery_type_hover
+#gallery, #demo-gallery
+  :width 408px
+  :height 240px
+  :padding 0
+  :margin  0 0 0.5em
+#gallery-nav, #demo-gallery-nav
+  :height 20px
+  :float left
+  a
+    :float left
+#output, #demo-output
+  h3
+    :display inline
+    :color= !gallery_type
+    :float left
+    :font-weight 700
+    :font-size 1em
+    :padding 0.5em
+ul.tour-galleries
+  +no-bullets
+  :margin 0
+  .tour-gallery, .tour-gallery a, a.tour-gallery
+    :display block
+    :width 424px
+    :height 249px
+    :border= 1px "solid" !gallery_border
+    :text-indent -9000em
+    :overflow hidden
+  li
+    :margin-bottom 3em
+  li.tour-iphone
+    :background url(/images/tour-iphone.jpg) no-repeat
+  li.tour-webapp
+    :background url(/images/tour-webapp.jpg) no-repeat
+    :text-indent -9000em
+  li.tour-admin
+    :background url(/images/tour-admin.jpg) no-repeat
+#content #subpage-top-content #subpage-sidebar.tour-page
+  :height 600px
+  :background #FFF
+  ul.tour-nav-container
+    //:border= 1px "solid" !gallery_border
+    :height 6em
+    :padding 1em 1em 1em 1em
+  ul.tour-sidebar
+  :padding-top 2em
+  +no-bullets
+  li
+    :float left
+  // li.nav-sidebar
+  li#iphone-sidebar
+    :margin-top 0
+    :height 251px
+    :margin-bottom 3em
+  li#webapp-sidebar
+    :height 251px
+    :margin-bottom 3em
+  // li.admin-sidebar
+#demo-modal, #exit-modal, #webapp-modal, #offer-modal, .jqmConfirmWindow
+  :text-align left
+  .top-bar
+    :float left
+    :width 100%
+    h2.demo-description
+      :float left
+      :margin 0
+      :display block
+      :height 25px
+      :width 85px
+      :text-indent -9000px
+      :background url(/images/main-sprite.png) repeat -10px -522px
+    a.demo-close
+      :float right
+      :color #939393
+      :font-size 1.2em
+      :margin-top 0
+    a:hover
+      :color= !link_hover_audience
+      :cursor pointer
+  h3
+    :margin-top 3em
+  #slideshow-gallery
+    :height 394px
+    :width 630px
+    :border= 1px "solid" #E3E0E0
+    :float left
+    a
+      :color #000
+    a:hover
+      :color= !link_hover_audience
+    img
+      :cursor pointer
+      :width 630px
+      :height 394px
+    img.jqmClose
+      :width 57px
+      :height 57px
+    .last-slide
+      +column(17)
+      .left-col
+        +column(7)
+        :padding-right 20px
+        h3
+          :margin 1.3em 0 0
+          :line-height 1em
+          :background url(/images/follow-us.png) no-repeat top left
+          :float left
+        h3 a
+          :text-indent -9000px
+          :display block
+          :width 113px
+          :height 47px
+        .recess-pitch
+          :float left
+          h4
+            :display inline
+            :float left
+            :color #000
+            :font-size 1.4em
+            :padding-left 0.7em
+            &.app-store
+              :margin 0 1em              
+            &.app-store a
+              :background-position -10px -757px
+              &:hover
+                :background-position -10px -822px
+            a
+              :color #000
+            a:hover
+              :color= !link_hover_audience
+      .right-col
+        +column(9, true)
+        .or
+          :font-size 1.2em
+          :line-height 1.3em
+          :margin-left 0.5em
+          :margin-top 0.3em
+        .youtube
+          :width 320px
+          :height 265px
+          :margin-bottom 2.3em
+          :margin-top 1em
+      h3
+        :color #000
+        +opacity(100)
+      img
+        :border= 1px "solid" #E3E0E0
+        :float left
+        :margin 1em
+      a
+        :color #000
+        +opacity(100)
+      a:hover
+        :color= !link_hover_audience
+  #slideshow-prev-next
+    :margin-top -30px
+    :margin-left 60px
+    p a
+      :font-size 1.5em
+  #slideshow-nav
+    :margin 0 70px
+    :width 497px
+    :height 181px
+    li
+      :display inline
+      :float left
+      :width 50px
+      :height 31px
+      :margin-right 10px
+      :margin-bottom 1em
+      :overflow hidden
+      :border= 1px "solid" #E3E0E0
+      img
+        :position relative
+        :top 0
+        :left 0
+        :vertical-align middle
+      a img
+        +opacity(30)
+      a.activeSlide img
+        +opacity(100)
+    li#slideshow-caption
+      :border 0 none
+      :height 100px
+      :width 505px
+      :margin-top 1.5em
+      h3
+        :color= #424242
+        :font-weight 400
+        :display block
+        :margin-top 0
+        &:first-line, .first-line
+          :display block
+          :color #040404
+          :font-weight 700
+          :width 550px
+      a
+        :color #000
+      a:hover
+        :color= !link_hover_audience
+#webapp-modal.jqmWindow-wide
+  :display none
+  :position absolute
+  :top 17%
+  :left 50%
+  :margin-left -450px
+  .content
+    +container
+    +column(24, true)
+    :background-color #FFF
+    :color #333
+    :border 1px "solid" #e3e0e0
+    :padding 12px
+    :height 485px
+    h3
+      :margin-top 0
+    fieldset
+      :margin 0
+      :padding 0
+      :border 0
+    label
+      :font-size 0.4em
+      :font-weight 400
+      :margin 0
+    input[type="submit"], input[type="button"]
+      :background #FFF
+    .leftColumn, .rightColumn
+      .header
+        +column(5)
+        h2
+          :margin-bottom 0
+      .notice
+        :margin-bottom 0
+      .flash
+        +column(6, true)
+        :display none
+        h3.error
+          :padding 0.5em
+          :margin-bottom 0
+    .leftColumn
+      +column(11)
+      +append(1)
+      .addGuest
+        +column(11, true)
+        .guestForm
+          +column(11, true)
+          :font-size 2.5em
+          :margin-bottom 1em
+          :padding 5px
+          input
+            :width 90%
+            :font-size 0.8em
+            :margin 0.3em 0
+          .phone-number
+            :width 205px
+            :margin-right 0.5em
+            :float left
+            input
+              :width 96%
+          .note
+            +column(5)
+            :width 305px
+            :margin-right 1em
+            input
+              :width 100%
+          .party
+            :width 60px
+            :float left
+            select
+              :height 1.7em
+          .wait-time
+            :margin -0.5em 0 0 10px
+            :float left
+            legend
+              :font-size 0.4em
+              :font-weight 400
+              :visibility hidden
+            .hours
+              :width 46px
+              :float left
+              :margin-right 10px
+              input
+                :float left
+                :width 30px
+            .minutes
+              +column(2, true)
+              :width 40px
+          .submit
+            +column(2, true)
+            :margin-top 0.6em
+        .details
+          .guestDetails
+            :padding 5px
+            :margin-top 0.5em
+            .leftColumn, .rightColumn
+              :margin-top 0.5em
+              :margin-bottom 0.5em
+              h4
+                :font-size 1em
+                :line-height 1.5
+              h4, h5
+                :margin-bottom 0.3em
+            .leftColumn
+              +column(5, true)
+              :padding-right 10px
+              .label
+                +column(2)
+              .data
+                +column(3, true)  
+            .rightColumn
+              +column(6, true)
+              .label
+                +column(2)
+              .data
+                +column(4, true)
+          .action-buttons    
+            +column(11, true)
+            input
+              :font-weight 700   
+            .send-page
+              +column(3)
+            .no-show
+              +column(2)     
+              :padding-right 20px     
+            .arrived
+              +column(2)
+            .delete-guest
+              +column(3, true)
+              :padding-left 18px
+              :margin-top 0.9em
+          .clear-list
+            +column(3, true)
+            :margin-top 2em
+            a
+              :color= #8A1F11
+            a:hover
+              :color= red
+    .rightColumn
+      +column(12, true)
+      .header
+        +column(3)
+      .guest-info
+        :width 346px
+      .waitlistButtons
+        :margin-top 0.9em
+        ul.waitlistButtons
+          +horizontal-list(1em)
+          +column(9, true)
+          li a.active
+            :color= !subpage_blue
+      .list
+        +column(12, true)
+        :overflow-y auto
+        :overflow-x hidden
+        :margin-top 1em
+        :margin-bottom 1em
+        :height 314px
+        h3
+          :margin-bottom 0.3em
+        a strong
+          :color= #000
+        table
+          +column(12, true)
+          tr.selected
+            :background-color= #FBBF15
+        table:last-child
+          :margin-bottom 0          
+        ul
+          +column(12, true)   
+          +no-bullets  
+          :margin 0
+          li
+            :margin-bottom 0.5em  
+body.popup #webapp-modal.jqmWindow-wide
+  :display block
+  :top 0
+  :left 48.7%
+#exit-modal
+  :height 515px
+  :position fixed
+  .exit-content
+    :margin-top 2.5em
+strong.or, p.or, em.or
+  :display inline
+  :float left
+  :padding 0.2em
+  :margin-left 1em
+  :margin-top 0.3em
+h4.demo-button
+  :text-indent -9000px
+  :display inline
+  :float left
+  :padding 0.2em 0
+.button
+  :background url(/images/button-sprites.png) left top repeat
+  :display block
+  :height 24px
+a.try-it
+  :background-position 239px 0
+  :width 93px
+a.try-it:hover
+  :background-position 239px 24px
+a.tour
+  :background-position 0 0
+  :width 84px
+a.tour:hover
+  :background-position 0 24px
+a.signup
+  :background-position 65px 0
+  :width 64px
+a.signup:hover
+  :background-position 65px 24px
+// Webapp-specific styling
+#guest-details
+  :background-color #FBBF15
+select
+  :font-size 0.8em
+  :margin 0.3em 0
+  :width 90%
+span.late
+  :color #ff0000
+#indicator
+  :display none
+#add-indicator
+  :display none
+#details-container
+  :height 120px
+  :float left
+#content
+  #subpage-bottom-content.home-page
+    :background none
+    :margin-bottom 4em
+    :float left
+    h3
+      :width 200px
+// Line-height fixes for Cufon in FF2
+h2.cufonify
+  :line-height 1em
+h3
+  :line-height 1em
+// Blog misc
+#content
+  #subpage-top-content
+    #subpage-main
+      #subpage-left
+        ol#archive li.search
+          :margin-bottom 1em
+        h1
+          :margin-bottom 0.8em
+          :margin-top 0.5em
+        a
+          :text-decoration none
+        a:hover
+          :text-decoration none
+        .entry-content
+          :margin-bottom 2em
+        .entry-content img.wp-smiley
+          :padding 0
+    #subpage-sidebar
+      a
+        :text-decoration none
+      a:hover
+        :text-decoration none
+    #subpage-sidebar.blog
+      :min-height 1500px
+      :height auto !important
+      :height 1500px
+  input#s
+    :width 130px
+
+// Error pages (404, 422, 500)
+body.errorPage
+  #content
+    :height 350px
+    :background= #FFF
+    .error-container
+      :padding 20px
+
+// Various fixes
+body #content
+  select
+    :font-size 1.1em
+    :font-family= !blueprint_font_family
+    :width 215px
+  select#creditcard_month
+    :width 40px
+  select#creditcard_year
+    :width 60px
+  select#creditcard_type
+    :width 140px
+  .cvv
+    :position absolute
+    :margin 0.4em
+  .test
+    button
+      :margin 0
+  .section
+    :width 636px
+  .prependOffer .tip img
+    :margin 4px 0 0 7px
+  .prependVenue
+body.messages #content
+  .tip img
+    :margin 7px 0 0 7px

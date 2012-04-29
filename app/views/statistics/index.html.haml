@@ -1,0 +1,30 @@
+%h1
+  = @page_title = 'Statistics'
+
+- form_for :filter do |f|
+  %table#statistics_filter
+    %tr.first-row
+      %td
+        = f.date_select :from
+      %td
+        = f.date_select :to
+      %td
+        = location_select f
+  %div
+    = f.submit "Filter"
+
+%table#reports
+  %tr
+    %th.label.tip{ :title => "The number of pages that were sent" } Pages
+    %td.count= @session_messages_report.sum { |m| m[1].to_i }
+    %td= sparkline_tag(@session_messages_report, :width => 150, :height => 30, :thickness => 2)
+  - if @admin_messages_report
+    %tr
+      %th.label.tip{ :title => "This counter includes confirmation messages, opt-out and help requests, as well as subscription confirmations" } Administrative Messages
+      %td.count= @admin_messages_report.sum { |m| m[1].to_i }
+      %td= sparkline_tag(@admin_messages_report, :width => 150, :height => 30, :thickness => 2)
+  - if @marketing_messages_report
+    %tr
+      %th.label.tip{ :title => "The number of promotional or other messages sent to subscribers" } Marketing Messages
+      %td.count= @marketing_messages_report.sum { |m| m[1].to_i }
+      %td= sparkline_tag(@marketing_messages_report, :width => 150, :height => 30, :thickness => 2)

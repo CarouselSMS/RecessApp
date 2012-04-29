@@ -1,0 +1,66 @@
+- if @guest
+  = hidden_field_tag 'guest_id', @guest.id
+  .header
+    %h2
+      %strong= "##{ @guest.id }"
+      Details
+  .flash{ :id => 'details-message' }
+    %h3.error
+      Invalid Operation
+  .guestDetails{ :id => 'details-container' }
+    - if @guest
+      .leftColumn
+        .label
+          %h4 Phone
+        .data
+          %h5= @guest.phone
+        .label
+          %h4 Status
+        .data
+          %h5
+            = h @guest.aasm_state.humanize
+            = "(#{ @guest.remaining_wait_time })"
+        .label
+          %h4 Party Size
+        .data
+          %h5
+            = h @guest.party_size == 11 ? '11+' : @guest.party_size
+      .rightColumn
+        %div#indicator
+          = image_tag('/images/ajax-loader.gif')
+      
+        .label
+          %h4 Wait
+        .data
+          %h5
+            = @guest.wait
+            = "(#{ @guest.remaining_wait_time })"
+        .label
+          %h4 Note
+        .data
+          %h5= @guest.note
+        .label
+          %h4 Paged
+        .data
+          %h5
+            = pluralize(@guest.page_count, 'time')
+      .action-buttons
+        .send-page
+          - if @guest.page_count == 0
+            = button_to_remote "Page", :url => page_demo_guest_path(@guest), :loading => "$('#indicator').show();", :complete => "$('#indicator').hide();"
+          - else
+            = button_to_remote "Page (#{ (@guest.page_count+1).ordinal })", :url => page_demo_guest_path(@guest), :loading => "$('#indicator').show();", :complete => "$('#indicator').hide();"
+        .no-show
+          - if @guest.noshow?
+            = button_to_remote 'Waiting', :url => waiting_demo_guest_path(@guest), :loading => "$('#indicator').show();", :complete => "$('#indicator').hide();"
+          - else
+            = button_to_remote 'No-Show', :url => noshow_demo_guest_path(@guest), :loading => "$('#indicator').show();", :complete => "$('#indicator').hide();"
+        .arrived
+          - if @guest.arrived?
+            = button_to_remote 'Waiting', :url => waiting_demo_guest_path(@guest), :loading => "$('#indicator').show();", :complete => "$('#indicator').hide();"
+          - else
+            = button_to_remote 'Arrived', :url => arrive_demo_guest_path(@guest), :loading => "$('#indicator').show();", :complete => "$('#indicator').hide();"
+        .delete-guest
+          = link_to_remote 'delete guest', :url => demo_guest_path(@guest), :method => :delete, :confirm => 'Are you sure?'
+      .clear-list
+        = link_to_remote 'Clear Waitlist', :url => clear_demo_guests_path, :method => :delete, :confirm => 'Are you sure?'

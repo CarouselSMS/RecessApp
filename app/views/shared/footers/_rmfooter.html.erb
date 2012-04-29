@@ -1,0 +1,32 @@
+<% width      = '712px' %>
+<% site_name  = 'The Recess text message paging system' %>
+
+<% link_style = 'padding: 0; font-size: 11px; color: #252525; font-family: \'Helvetica Neue\', Arial, Helvetica, sans-serif; text-decoration: underline;' %>
+<% h3_style   = lambda { |margin| "padding: 0; margin: 0 0 0 #{margin}px; display: inline; font-family: \'Helvetica Neue\', Arial, Helvetica, sans-serif; font-size: 18px; font-weight: 400;" } %>
+
+<div style="clear: both; display: block; margin: 0 0 4em 0;">&nbsp;</div>
+<div id="recessmobile-footer" style="width: <%= width %>; position: relative; height: 162px;	clear:both; margin: 0 auto; background-color: #FFF; padding: 0;">
+  <div style="width: <%= width %>; height: 36px; background-color: #8B8B8B; float: left; margin: 0 0 18px 0; padding: 0;">
+    <p style="margin: 10px 40px; display: block; text-align: left; font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; color: #C5C5C5; font-weight: 400; font-size: 14px; padding: 0; line-height: 1.1;"><span style="color: #EDEDED; font-weight: 700;"><%= site_name %></span>&nbsp;is part of the Recess Mobile family of products</p>
+  </div>
+  <div style="width: <%= width %>; height: 72px; float: left; margin: 0 0 7px 0; padding: 0;">
+    <h2 style="padding: 0; margin: 0; display: block; width: 225px; height: 27px; font-weight: 700; font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; color: #000; margin: 11px 0 8px 40px; padding: 0; text-indent: -9000px; background-color: #FFF; background-image: url('http://www.recessmobile.com/images/recess-mobile-sms.png'); background-repeat: no-repeat; background-attachment: top; background-position: 0 0; line-height: 1; overflow: hidden;">
+      <a href="http://www.recessmobile.com" title="Recess Mobile" style="display: block; width: 225px; height: 27px; font-weight: 700; font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; color: #000; margin: 11px 0 8px 40px; padding: 0; text-indent: -9000px; line-height: 1;">Recess Mobile</a>
+    </h2>
+     <p style="margin: 0 0 0 40px; display: block; width: 340px: height: 15px; font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; color: #A6A6A6; font-weight: 400; font-size: 12px; padding: 0; text-align: left; text-indent: -9000px; background-color: #FFF; background-image: url('http://www.recessmobile.com/images/We-build-elegant-SMS-and-web-apps-for-ourselves-and-for-our-clients.png'); background-repeat: no-repeat; background-attachment: top; background-position: 0 0; line-height: 1.5;">We build elegant SMS + web apps for ourselves and for our clients.</p>
+  </div>
+  <div style="width: <%= width %>; height: 72px; float: left; margin: 0 0 18px 0; padding: 0;">
+    <h3 style="<%= h3_style.call(40) %>">
+      <a href="http://www.recessmobile.com/" style="<%= link_style %>">Recess Mobile</a>
+    </h3>
+    <h3 style="<%= h3_style.call(10) %>">
+      <a href="http://www.recessmobile.com/sms-mobile-applications" style="<%= link_style %>">SMS Web Applications</a>
+    </h3>
+    <h3 style="<%= h3_style.call(10) %>" >
+      <a href="http://www.recessmobile.com/sms-mobile-services" style="<%= link_style %>">SMS Development &amp; Integration Services</a>
+    </h3>
+    <h3 style="<%= h3_style.call(10) %>">
+      <a href="http://www.recessmobile.com/sms-mobile-technology" style="<%= link_style %>">SMS Platform &amp; API</a>
+    </h3>
+  </div>
+</div>

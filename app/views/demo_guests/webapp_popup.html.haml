@@ -1,0 +1,13 @@
+!!! Strict
+%html{ "xmlns" => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", "lang" => "en" }
+  %head
+    = render :partial => "shared/head"
+    = javascript_include_tag "jquery-ui", "webapp_demo"
+  %body.popup
+    #webapp-modal.jqmWindow-wide  
+      .content
+        .top-bar
+          %h2.demo-description.png= @page_title = 'Recess desktop application'
+        .webappContent
+          = render :partial =>  "/demo_guests/webapp_content"
+    = render :partial => "/shared/confirmation"

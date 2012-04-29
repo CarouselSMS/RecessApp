@@ -1,0 +1,14 @@
+%h1= @page_title = 'Affiliates Payouts'
+
+%p= link_to 'Back', admin_affiliates_path
+
+- content_for :head do
+  = stylesheet_link_tag 'jquery/ui-lightness/ui.all'
+  = javascript_include_tag 'jquery.datepicker.min', 'affiliates_payouts'
+
+- form_tag payouts_admin_affiliates_path do
+  = select_tag :type, options_for_select([['Current month', 'current_month'], ['Previous month', 'prev_month'], ['Range', 'range']], params[:type])
+  = text_field_tag :start_date, params[:start_date], :style => (params[:type].eql?('range') ? '' : 'display:none;')
+  = text_field_tag :end_date, params[:end_date], :style => (params[:type].eql?('range') ? '' : 'display:none;')
+  = hidden_field_tag :format, :csv
+  = submit_tag 'Export'

@@ -1,0 +1,5 @@
+%h1
+  = @page_title = 'Edit Location'
+
+- form_for @location do |f|
+  = render :partial => "form", :locals => { :f => f }

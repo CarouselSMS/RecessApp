@@ -1,0 +1,20 @@
+#toppanel.png
+  = render :partial => '/shared/toppanel_content', :locals => {:panelID => 'signupPanel' }
+  :erb
+    </div>
+  .top-nav-container
+    - unless admin_subdomain?
+      = link_to 'Launch the application in a popup', webapp_popup_guests_path, :target => 'new', :class => 'launch-app webapp-popup png'
+    %ul.panel-nav
+      - if admin_subdomain?
+        %li.first-child.png= link_to "Log out, Admin", session_url, :method => :delete
+      - else
+        %li.first-child.png= link_to "Log out, #{current_user.name}", session_url, :method => :delete
+      %li.toggleClose.close.last-child.png{ :style => "display: none;" }
+        %a{ :href => "#toppanel" } Close Panel
+      - if admin_subdomain?
+        %li.last-child.admin-view.png
+          %a{ :href => "#" } Admin View
+      - else
+        %li.toggleClose.last-child.png
+          %a{ :class => "contact-open", :href => "http://holmesmobile.wufoo.com/forms/contact-us/" } Contact

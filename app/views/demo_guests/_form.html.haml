@@ -1,0 +1,30 @@
+- form_remote_for :guest, :url => demo_guests_path, :html => { :method => :post, :id => 'guest-form' }, :loading => "$('#add-indicator').show();", :complete => "$('#add-indicator').hide();" do |form|
+  %fieldset
+    .phone-number
+      %label{ :for => 'phone-number' }
+        Guest's cell phone number
+      %input{ :type => 'text',   :id => 'phone-number', :name => 'guest[phone]' }
+    .party
+      %label{ :for => 'guest_party_size' }
+        Party Size
+      = select_tag 'guest[party_size]', options_for_select(Guest::PARTY_SIZE.collect{ |s| s == 11 ? ['11+', 11] : [s,s]})
+    .wait-time
+      %fieldset
+        %legend
+          Wait time
+        .hours
+          %label{ :for => 'hours' }
+            Hours
+          %input{ :type => 'text',   :id => 'hours',   :name => 'guest[wait_hours]', :value => '0' }
+        .minutes
+          %label{ :for => 'minutes' }
+            Minutes
+          %input{ :type => 'text',   :id => 'minutes', :name => 'guest[wait_minutes]' }
+    .note
+      %label{ :for => 'note' }
+        Note (name etc.)
+      %input{ :type => 'text',   :id => 'note', :name => 'guest[note]' }
+    .submit
+      %input{ :type => 'submit', :id => 'addguest', :value => 'Add' }
+    %div#add-indicator
+      = image_tag('/images/ajax-loader.gif')

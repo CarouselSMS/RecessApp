@@ -1,0 +1,64 @@
+<%= @page_title = "Free up your time &amp; connect to your favorite places with text-message paging" %>
+
+<% content_for :head do %>
+<meta name="Description" content="With complete privacy and security guaranteed, Recess gives guests freedom and a level of connection never before seen with traditional paging systems." />
+<meta name="Keywords"content="freedom, paging systems, text message, sms, guests, restaurants, doctor, dentist, office, waiting, recess" />
+<% end %>
+
+<% content_for :description_header, "Toss the plastic pager and take your time back. With text message paging, you're finally free." %>
+<% content_for :header_class, "guests-header" %>
+
+<% content_for :subpagetopcontent do %>
+  <%= render(:partial =>  "subpagetopcontent", :locals => { :header => "Guests" }) %>
+<% end %>
+
+<% content_for :subpageleftcontent do %>
+                <div>
+                    <ul id="gallery" class="pics stripViewer">
+                        <li><img src="/images/guests/easy.jpg" alt="Easy to Use" /></li>
+                        <li><img src="/images/guests/go-anywhere.jpg" alt="Free to Go Where You Want" /></li>
+                        <li><img src="/images/guests/dirty-pagers.jpg" alt="No Dirty Pagers!" /></li>
+                        <li><img src="/images/guests/any-phone.jpg" alt="Works With Any Phone" /></li>
+                        <li><img src="/images/guests/secure.jpg" alt="Privacy &amp; Security" /></li>
+                    </ul>
+                    <div id="output"></div>
+                </div>
+    </div> <!-- #subpage-left -->
+</div><!-- #subpage-main -->
+<% end %>
+
+<% content_for :subpagesidebar do %>
+  <%= render :partial =>  "subpagesidebar_main",
+    :locals => { :sidebar_header => "See a good fit for Recess?",
+    :sidebar_subheader => "If your favorite place has frustrating wait times, have them try Recess free for 15 days or<br /><a class='contact-open' href='http://holmesmobile.wufoo.com/forms/contact-us/' title='Contact us'>write us a note</a>."
+  } %>
+<% end %>
+
+<% content_for :body do %>
+                <div id="subpage-bottom-content">
+                    <div id="subheader">
+                    <h2>Benefits &amp; Features</h2>
+                    <h4>You already live your life on your cell phone. Isn&rsquo;t it about time for Recess?</h4>
+                    </div>
+
+                        <div id="sub-left">
+                            <h3>Easy to Use</h3>
+                            <p>Give your phone number to the host or attendant and make sure you can hear or feel your phone.</p>
+                            <h3>Privacy &amp; Security</h3>
+                            <p>Your phone number is never seen after initially being put into Recess and it&rsquo;s stored on a remote secure server that only authorized employees have access to.</p>
+                        </div>
+                        <div id="sub-middle">
+                            <h3>Additional Features</h3>
+                            <p>Freedom &amp; time to do whatever you want while you wait. Go find a swing set, climb some monkey bars, or jump rope. Recess will let you know when it&rsquo;s time to come back in.</p>
+                            <p>No extra pieces of hardware to carry around and no worries about the bacteria they house.</p>
+                        </div>
+                        <div id="sub-right">
+                            <h3>Special Offers</h3>
+                            <p>Receive special offers and updates from your favorite establishments if you choose to. Venues using Recess may only send you text messages if you explicitly give them permission to do so.</p>
+                            <h3>Future Releases</h3>
+                            <p>2-Way paging allows you to update your waitlist status remotely from your phone.</p>
+                        </div>
+                </div> <!-- subpage-bottom-content -->
+
+                            <%= render(:partial =>  "offers") %>
+<% end %>

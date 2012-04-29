@@ -1,0 +1,14 @@
+#toppanel.png
+  = render :partial => '/shared/toppanel_content', :locals => {:panelID => 'signupPanel' }
+  :erb
+    </div>
+  .top-nav-container
+    %ul.panel-nav
+      %li.toggleHide.first-child.png
+        = link_to_front "Signup", 'pricing'
+      %li.toggleClose.png
+        %a.contact-open{ :href => "http://holmesmobile.wufoo.com/forms/contact-us/" } Contact
+      %li.toggleClose.close.first-child.png{ :style => "display: none;" }
+        %a{ :href => "#toppanel" } Close Panel
+      %li.png.last-child
+        %a.jqModal.demo-link{ :href => "#demo-modal" } Tour

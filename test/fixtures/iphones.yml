@@ -1,0 +1,14 @@
+second_use:
+  udid:     0123456789012345678901234567890123456780
+  sent:     1
+  blocked:  false
+
+blocked:
+  udid:     0123456789012345678901234567890123456781
+  sent:     1
+  blocked:  true
+
+empty:
+  udid:     0123456789012345678901234567890123456782
+  sent:     250
+  blocked:  false

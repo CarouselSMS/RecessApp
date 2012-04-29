@@ -1,0 +1,105 @@
+<div class="gt-content-plan-wrapper">
+
+  <h1><%= @page_title = 'Create an account' %></h1>
+  <h4 class="plan-description"><%=h @account.plan.description %></h4>
+
+  <% form_tag :action => 'create' do %>
+    <%= hidden_field_tag 'plan',                        params[:plan] %>
+    <%= hidden_field_tag 'account[locally_registered]', params[:local] || @account.locally_registered? %>
+
+    <% if @account.errors.any? %>
+      <div class="errorExplanation">
+        <h2>Errors encountered with your account information:</h2>
+        <ul>
+          <%= @account.errors.full_messages.map {|m| content_tag('li', m)} %>
+        </ul>
+      </div>
+    <% end %>
+
+    <fieldset>
+      <legend>Account Information</legend>
+      <% fields_for :account do |f| %>
+        <%= f.text_field :name, :label => "Company Name", :size => 26 %>
+      <% end %>
+
+      <% fields_for :user do |f| %>
+        <%= f.text_field :name,   :size => 26, :label => "Your Name" %>
+        <%= f.text_field :email,  :size => 26 %>
+        <%= f.text_field :login,  :label => "Username", :size => 26 %>
+        <%= f.text_field :mobile, :label => "Cell phone number", :size => 26 %>
+        <label for="user_password">Password</label>
+        <%= f.password_field :password, :size => 26 %>
+        <label for="user_password_confirmation">Password Confirmation</label>
+        <%= f.password_field :password_confirmation, :size => 26 %>
+      <% end %>
+    </fieldset>
+
+    <fieldset>
+      <legend>Create your Recess site address</legend>
+      <div class="info">
+        <p>Every Recess site has its own unique web address. This is where
+        you&rsquo;ll login. For example, if you wanted your Recess site to be at
+        <em>deli.recessapp.com</em> you&rsquo;d enter <code>deli</code> in the field below.</p>
+        <p><strong>Letters and numbers, please &mdash; no spaces</strong>.</p>
+      </div>
+
+      <% fields_for :account do |f| %>
+        http:// <%= f.text_field :domain, :label => false, :class => 'domain', :size => 14 %>. <%= AppConfig['base_domain'] %>
+      <% end %>
+    </fieldset>
+
+    <% if @account.needs_payment_info? %>
+      <%= render :partial => "shared/credit_card_form" %>
+    <% end %>
+
+    <fieldset>
+      <legend>Discount Code</legend>
+      <label>Discount Code (Optional)</label>
+      <%= text_field_tag :discount, params[:discount], :size => 15 %>
+    </fieldset>
+
+    <h2>Review terms</h2>
+
+    <div class='terms'>
+      <p><strong>Your plan is <%=h @account.plan.description %></strong></p>
+
+      <% if @account.plan.trial_period? %>
+        <p>If you keep your account open past that time you&rsquo;ll be charged
+        <%= number_to_currency(@account.plan.amount) %>/month for the service.
+        If you don't want to continue using Recess, just cancel before you&rsquo;re
+        billed on <span class='first_billing_at'><%= @account.plan.first_billing_at.to_s(:short_day) %></span>
+        and you won't be charged.</p>
+      <% end %>
+
+      <p><strong>Recess is month-to-month, cancel at any time</strong></p>
+      <p>Recess does not charge sign-up fees, cancellation fees, or make you sign long-term contracts.</p>
+
+      <p><strong>You will log in at this address:</strong></p>
+      <p class="recess-domain">http://<span class='domain'></span>.<%= AppConfig['base_domain'] %></p>
+
+      <hr/>
+
+      <p>Please review our Terms of Service, Privacy Policy, and Refund Policy.
+      If you have questions please email to support.</p>
+
+      <p>
+        <% fields_for :account do |f| %>
+	        <%= f.check_box :tos, :label => false %> I agree to the Terms of Service, Privacy and Refund policies.
+	      <% end %>
+      </p>
+
+      <input type="submit" value="Place order &amp; create my Recess account" />
+
+      <p><%= link_to_function "Terms of Service", "document.getElementById('tos').style.display = 'block'; this.style.display='none'; return false" %></p>
+      <div id="tos" style="display: none">
+        <%= render "front/terms_content" %>
+      </div>
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
+      var domain_field = $('#account_domain');
+      domain_field.domain_field();
+      $('#account_name').company_name(domain_field);
+    </script>
+	<% end %>
+</div>

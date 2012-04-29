@@ -1,0 +1,23 @@
+<%= @page_title = "Thanks for providing us feedback!" %>
+<% content_for :description_header, "Please expect to hear from us soon." %>
+<% content_for :header_class, "thanks-header" %>
+
+<% content_for :subpagetopcontent do %>
+  <%= render(:partial =>  "subpagetopcontent", :locals => { :header => "Thanks" })  %>
+<% end %>
+
+<% content_for :subpageleftcontent do %>
+
+<h2>Thanks for providing us feedback!</h2>
+
+    </div> <!-- #subpage-left -->
+</div><!-- #subpage-main -->
+<% end %>
+
+<% content_for :subpagesidebar do %>
+                    <div id="subpage-sidebar" class="content-sidebar">
+
+
+                    </div> <!-- #subpage-sidebar -->
+                    </div> <!-- missing closing div -->
+<% end %>

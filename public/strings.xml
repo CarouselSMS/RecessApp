@@ -1,0 +1,41 @@
+<strings>
+	<TEXT_MESSAGE_CONFIRM>Thank you for joining us. We'll let you know when it's time.\n\nTxt HELP for help\nMsg&amp;Data Rates May Apply\nBy RecessApp.com</TEXT_MESSAGE_CONFIRM>
+	<TEXT_MESSAGE_READY>Please let us know you've arrived. Enjoy your experience.</TEXT_MESSAGE_READY>
+	<MSG_ADD_TO_LIST_CONFIRM>Is this number correct?\n%@</MSG_ADD_TO_LIST_CONFIRM>
+	<MSG_ADD_TO_LIST_CONFIRM_EMAIL>Is this email correct?\n%@</MSG_ADD_TO_LIST_CONFIRM_EMAIL>
+	<MSG_GUEST_ADDED>Guest #%d added to the list and confirmation page sent.</MSG_GUEST_ADDED>
+	<MSG_GUEST_ADDED_EMAIL>Guest #%d added to the list &amp; confirmation page sent.</MSG_GUEST_ADDED_EMAIL>
+	<HELP_PAGE_GUEST>Recess can send text messages to any cell phone. Enter a phone number, area code first (###) ###-####, and press 'GO.'\nRecess will ask if you would like to insert an expected wait time, add another guest, or go back to the list.\nIf you select Expected Wait Time, you will be taken to a picker view. Scroll through the dials to the appropriate number of hours and minutes to select the wait time. On this screen, you can enter a note in the 'Note' field – an onscreen keyboard will pop up.\nThe guest’s phone number will only be used to page them and will never be added to a spam list or allow abuse. The only way a guest will receive future updates is if they opt-in to the your text list.\nYou can reassure your guests of their privacy. Phone numbers are obscured in the application itself and stored remotely on a secure server.</HELP_PAGE_GUEST>
+	<HELP_PAGE_HOST>Recess is designed to easily show guest's status, whether they’re waiting, paged, arrived or no-shows.\nNavigate to the List view via the bottom tab bar. The list shows you a Guest ID in black, followed by time they’ve been waiting, and a note field in brackets. Color codes warn you when a guest is approaching or has exceeded their expected wait time (red).\nIn the List view, you will see a filter search bar at the top. Pressing on it will bring up a keypad, allowing you to live-filter your results if the waittlist becomes too long to scroll comfortably.\nBelow the filter search bar are four guest categories: 'Waiting,' 'Paged,' 'Arrived,' and 'No-Show.' Pressing any one of these will bring up the associated entries. To put a guest into one of these categories, select a guest from the list and press one of the status buttons at the bottom of the details screen that appears.\nOn the guest details screen, you can see all associated guest information, including total time in system, quoted and actual wait time (if provided) and any additional information you've input. Depending on the guest's status, you'll typically see at the bottom a 'Send Page' button, as well as 'Arrived' and 'No-Show.' Use these buttons to send a page to the guest or update their status when they arrive.\nPlease visit RecessApp.com/help for illustrated guides.</HELP_PAGE_HOST>
+	<HELP_PAGE_ABOUT>Copyright (c) 2009 Recess Mobile, Inc.</HELP_PAGE_ABOUT>
+	<HELP_PAGE_ACCOUNT>You can access your account information and settings by visiting the website address you chose when creating your account. This will be [accountname].recessapp.com. There you can change the copy of your text messages, add or remove offers, view account statistics, and view billing information.</HELP_PAGE_ACCOUNT>
+	<HELP_PAGE_TERMS>Standard message charges apply.</HELP_PAGE_TERMS>
+	<MSG_INVALID_PHONE_NUMBER>You have entered an invalid phone number.  Please enter a 10-digit number (including area code)</MSG_INVALID_PHONE_NUMBER>
+	<MSG_INVALID_EMAIL>You have entered an invalid email address.  Please enter a full email address.</MSG_INVALID_EMAIL>
+	<MSG_NO_USERNAME>Please enter a username.</MSG_NO_USERNAME>
+	<MSG_NO_PASSWORD>Please enter a password.</MSG_NO_PASSWORD>
+	<MSG_CLEAR_WAITLIST>Clear the entire waitlist?</MSG_CLEAR_WAITLIST>
+	<MSG_JOINED_PROMPT>The user has been added to the list.</MSG_JOINED_PROMPT>
+	<MSG_SENDING_PAGE>Sending the page in %d...</MSG_SENDING_PAGE>
+	<MSG_MAX_PAGES>You have exceeded the max number of pages for this guest.</MSG_MAX_PAGES>
+	<MSG_LOW_CREDITS>You now have %d credits remaining.  Would you like to purchase more now?</MSG_LOW_CREDITS>
+	<MSG_SENDING_ERROR_LOG>The error log is being sent to the staff.</MSG_SENDING_ERROR_LOG>
+	<API_SERVER>recessapp.com</API_SERVER>
+	<SERVER>recessapp.com</SERVER>
+	<URL_REGISTER>signup#camp=createnewaccount&amp;src=app&amp;med=iphone</URL_REGISTER>
+	<URL_FORGOT_PASSWORD>account/forgot</URL_FORGOT_PASSWORD>
+	<URL_STATISTICS>statistics</URL_STATISTICS>
+	<URL_ACCOUNT>account</URL_ACCOUNT>
+	<URL_CREDITS>account/billing</URL_CREDITS>
+	<URL_HELP>help</URL_HELP>
+	<URL_TOC>terms</URL_TOC>
+	<MAX_PAGES_PER_GUEST>5</MAX_PAGES_PER_GUEST>
+	<TEXT_MESSAGE_DELAY>300</TEXT_MESSAGE_DELAY>
+	<TIME_SHORT>5</TIME_SHORT>
+	<TIME_MEDIUM>20</TIME_MEDIUM>
+	<POLLING_DELAY>30</POLLING_DELAY>
+  <CONTACT_PHONE>tel:810.3.RECESS (810.373.2377)</CONTACT_PHONE>
+  <CONTACT_WEBSITE>http://www.recessapp.com</CONTACT_WEBSITE>
+  <CONTACT_EMAIL>mailto:contact@recessapp.com</CONTACT_EMAIL>
+  <LOGOUT_EXIT>1</LOGOUT_EXIT>
+</strings>

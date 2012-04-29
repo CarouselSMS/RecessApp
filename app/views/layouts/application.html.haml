@@ -1,0 +1,6 @@
+!!! Strict
+%html{ "xmlns" => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", "lang" => "en" }
+  %head
+    = render :partial => "shared/head"
+  %body{ :class => controller.controller_path.gsub('/', ' ') }
+    = render :partial => logged_in? ? "layouts/body_signedin" : "layouts/body"

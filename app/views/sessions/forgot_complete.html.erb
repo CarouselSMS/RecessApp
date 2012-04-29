@@ -1,0 +1,23 @@
+<%= @page_title = 'Forgotten Password' %>
+
+<% content_for :description_header, "Forgotten Password" %>
+<% content_for :header_class, "forgot-header" %>
+
+<% content_for :subpagetopcontent do %>
+  <div id="subpage-top-content">
+    <div id="subpage-main">
+      <div id="subpage-left">
+<% end %>
+
+<% content_for :subpageleftcontent do %>
+  <p>An email has been sent to you with instructions on how to reset your password.</p>
+    </div> <!-- #subpage-left -->
+</div><!-- #subpage-main -->
+<% end %>
+
+<% content_for :subpagesidebar do %>
+<div id="subpage-sidebar" class="content-sidebar">
+  &nbsp;
+ </div> <!-- #subpage-sidebar -->
+</div> <!-- missing closing div -->
+<% end %>

@@ -1,0 +1,10 @@
+<h1><%= @page_title = 'Plans' %></h1>
+
+<p>
+  Here are our plans.  Please select one:
+</p>
+
+<ul>
+  <%= @plans.map {|p| content_tag(:li, link_to(p, new_account_url(:plan => p, :discount => params[:discount])))} %>
+</ul>
+

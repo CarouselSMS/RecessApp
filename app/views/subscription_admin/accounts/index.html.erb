@@ -1,0 +1,24 @@
+<h1><%= @page_title = 'Accounts' %></h1>
+
+<p><%= link_to "All Accounts in CSV", admin_accounts_path(:format => 'csv') %></p>
+
+<table id="accounts">
+  <tr class="first-row">
+    <th><%= paged_sorted_self_link("Name", "name") %></th>
+    <th><%= paged_sorted_self_link("Domain", "full_domain") %></th>
+    <th><%= paged_sorted_self_link("Created", "created_at") %></th>
+    <th>Affiliate</th>
+  </tr>
+  <% @accounts.each do |account| %>
+    <tr>
+      <td><%= link_to(h(account.name), [:admin, account]) %></td>
+      <td><%= account.full_domain %></td>
+      <td><%= account.created_at.to_s(:short_day) %></td>
+      <td>
+				<%= link_to(account.affiliate.name, [:admin, account.affiliate]) if account.affiliate %>
+			</td>
+    </tr>
+  <% end %>
+</table>
+
+<%= will_paginate(@accounts) %>

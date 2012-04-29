@@ -1,0 +1,5 @@
+%table#guests
+  %tr
+    %th{ :colspan => '3' }
+      %h3= state
+  = render :partial => 'demo_guests/guest', :collection => @guests

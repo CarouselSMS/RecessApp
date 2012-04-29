@@ -1,0 +1,21 @@
+<h1><%= @page_title = 'Users' %></h1>
+<p><%= link_to('Add a new user', new_user_url) %></p>
+
+<table id="users">
+  <tr class="first-row">
+    <th>Name</th>
+    <th>Email</th>
+    <th>Location</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% current_account.users.each do |user| %>
+    <tr>
+      <td><%=h user.name %></td>
+      <td><%=h user.email %></td>
+      <td><%=h user.location.nil? ? "" : "#{user.location.name}" %>
+      <td><%= link_to('Edit', edit_user_path(user)) %></td>
+      <td><%= link_to('Delete', user, :method => 'delete', :confirm => 'Are you sure you want to delete this user?') unless user == current_user %></td>
+    </tr>
+  <% end %>
+</table>

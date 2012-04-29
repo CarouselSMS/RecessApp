@@ -1,0 +1,19 @@
+%h1= @page_title = 'Affiliate Accounts'
+
+%p= link_to 'Back', :back
+
+%table#affiliate_accounts
+  %tr.first-row
+    %th Name
+    %th Domain
+    %th Payout
+    %th Revenue
+    %th Created
+
+  - @affiliate.accounts.each do |account|
+    %tr
+      %td= link_to(h(account.name), [:admin, account])
+      %td= account.full_domain
+      %td= number_to_currency(account.reference.payment_amount)
+      %td= number_to_currency(account.reference.subscription_amount)
+      %td= account.created_at.to_s(:short_day)

@@ -1,0 +1,12 @@
+= form.error_messages
+
+%fieldset
+  = form.text_field :first_name
+  = form.text_field :last_name
+  = form.text_field :slug
+  = form.text_field :email
+  = form.text_field :percent
+
+= submit_tag
+or
+= link_to 'Cancel', :back

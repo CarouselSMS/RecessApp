@@ -1,0 +1,11 @@
+place1_1:
+  account:  place1
+  name:     Monday drink offer
+  text:     Get 20% off your first drink
+  details:  Bar specials today 20% off
+
+place1_2:
+  account:  place1
+  name:     10% off
+  text:     Get 10% off your second drink
+  details:  Bar specials today 10% off your happy hour drink 5-7PM

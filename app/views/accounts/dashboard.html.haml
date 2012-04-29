@@ -1,0 +1,9 @@
+%h1
+  = @page_title = "Welcome to Recess, #{@account.name}!"
+
+- if @account.incomplete?
+  .action
+    <h4>Your account appears to be incomplete.</h4>
+    == Please #{link_to "review and update your account", edit_account_url}.
+
+= render :partial => "account_list"

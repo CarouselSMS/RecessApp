@@ -1,0 +1,18 @@
+%h1
+  = @page_title = 'Subscription Messages'
+
+%table#messages
+  %tr.first-row
+    %th.body        Body
+    %th.parts       Parts
+    %th.recipients  Recipients
+    %th.date        Date
+
+  - for message in @messages
+    %tr
+      %td.body=       h(message.body)
+      %td.parts=      message.parts
+      %td.recipients= message.recipients
+      %td.date=       message.created_at.to_s(:us_with_time)
+
+= will_paginate @messages

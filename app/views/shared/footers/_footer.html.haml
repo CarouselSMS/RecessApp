@@ -1,0 +1,32 @@
+.news
+  = render :partial => "shared/footers/news"
+#availability
+  %h4.app-store
+    = link_to_appstore
+#copyright
+  %p
+    = link_to "Interested in integrating Recess using our API?", 'integration'
+  %p
+    Copyright &copy; 2009 Recess Mobile, Inc. &nbsp;
+    = mail_to "support@recessapp.com", "email support", :encode => "hex"
+  %p.small
+    %a.contact-open{ :href => "http://holmesmobile.wufoo.com/forms/contact-us/" }
+      contact us
+    \|
+    = link_to "terms &amp; conditions and privacy policy", url_for(:action => 'terms')
+#bottom-footer
+  .footer-mailing
+    %p
+      %a{ :href => "http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=595+S.+3rd+St.,+Columbus,+OH+43215&amp;sll=39.962532,-82.998&amp;sspn=0.009588,0.019312&amp;ie=UTF8&amp;ll=39.950823,-82.995658&amp;spn=0.00959,0.019312&amp;z=16&amp;iwloc=A", :title => "Google Maps" }
+        Recess Mobile, Inc., 595 1/2 S 3rd Street, Columbus, OH 43215
+  .footer-phone.png
+    %p
+      phone
+      %strong (810) 3RECESS &mdash; (810) 373-2377
+= render :partial => "/shared/footers/rmfooter"
+%script{ :type => "text/javascript" }
+  Cufon.now();
+= render :partial => "shared/confirmation"
+= render :partial => "shared/metrics" unless Rails.env == "development"
+.submit-sprite
+  %img{ :src => "/images/submit-sprite.png", :alt => "" }

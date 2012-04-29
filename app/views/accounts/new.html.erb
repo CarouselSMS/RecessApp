@@ -1,0 +1,23 @@
+<%= @page_title = "Sign up for an account" %>
+
+<% content_for :description_header, "Sign up for an account" %>
+<% content_for :header_class, "signup-header" %>
+
+<% content_for :subpagetopcontent do %>
+  <div id="subpage-top-content">
+    <div id="subpage-main">
+      <div id="subpage-left">
+<% end %>
+
+<% content_for :subpageleftcontent do %>
+  <%= render(:partial =>  "new_content") %>
+    </div> <!-- #subpage-left -->
+</div><!-- #subpage-main -->
+<% end %>
+
+<% content_for :subpagesidebar do %>
+<div id="subpage-sidebar" class="content-sidebar">
+  <h3>Please fill out this form to begin your free 15-day trial.</h3>
+ </div> <!-- #subpage-sidebar -->
+</div> <!-- missing closing div -->
+<% end %>

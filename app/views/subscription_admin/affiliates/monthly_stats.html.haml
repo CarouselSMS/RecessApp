@@ -1,0 +1,19 @@
+%h1= @page_title = 'Affiliate Monthly Stats'
+
+%p= link_to 'Back', :back
+
+%table#affiliate_monthly_stats
+  %tr.first-row
+    %th Month
+    %th References
+    %th Signups
+    %th Payout
+    %th Revenue
+
+  - @stats.each do |month, stat|
+    %tr
+      %td= stat.date.to_s(:month_year)
+      %td= stat.references_count.to_i
+      %td= stat.accounts_count.to_i
+      %td= number_to_currency(stat.payment_amount)
+      %td= number_to_currency(stat.subscription_amount)

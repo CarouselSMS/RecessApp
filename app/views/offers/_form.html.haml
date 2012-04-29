@@ -1,0 +1,19 @@
+= error_messages_for :offer
+
+= f.text_field :name, :label => "<span class='tip' title='Label your offer for future reference'>Name</span>"
+= f.text_area  :text, :rows => 2, :cols => 40, :label => "<span class='tip' title='Add an offer for more info'>Text</span>"
+= f.text_area  :details, :rows => 8, :cols => 40, :label => "<span class='tip' title='You can add whatever you&rsquo;d like here. You have 160 characters to explain something or ask your guest to perform an action, &quot;try a martini&quot;, or &quot;ask about…&quot;'>More (Rply M for more)</span>"
+
+%label
+  Send test offer to phone (10 digits):
+%input{ :type => "text", :id => "o_phone_number" }
+%button{ :id => "send_test_offer" }
+  Send Test
+%span{ :id => "o_status" }
+
+:javascript
+  $(function() {
+    $("textarea#offer_text").sms_field({ part_size: 30, multipart: false });
+    $("textarea#offer_details").sms_field();
+    $("#send_test_offer").send_test_offer("#o_phone_number", "#o_status");
+  });

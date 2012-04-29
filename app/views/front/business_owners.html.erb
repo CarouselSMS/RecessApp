@@ -1,0 +1,62 @@
+<%= @page_title = "Text-message paging is the future of paging systems" %>
+
+<% content_for :head do %>
+<meta name="Description" content="Recess is blowing other paging systems out of this world. See how text message paging is taking over and making business owner’s lives easier than ever." />
+<meta name="Keywords" content="paging systems, text message, sms, business owners, restaurants, doctor, dentist, office, waiting, recess" />
+<%  end %>
+
+<% content_for :description_header, "No outrageous set up costs or steep learning curves. We made Recess simple and fun for you and your guests." %>
+<% content_for :header_class, "business-owners-header" %>
+
+<% content_for :subpagetopcontent do %>
+  <%= render(:partial =>  "subpagetopcontent", :locals => { :header => "Business Owners" }) %>
+<% end %>
+
+<% content_for :subpageleftcontent do %>
+                <div>
+                    <ul id="gallery" class="pics stripViewer">
+                        <li><img src="/images/owners/save-money.jpg" alt="Lower Cost (no replacing pagers)" /></li>
+                        <li><img src="/images/owners/happy-customers.jpg" alt="Happy Customers" /></li>
+                        <li><img src="/images/owners/tracking.jpg" alt="Reporting / Tracking" /></li>
+                        <li><img src="/images/owners/efficient.jpg" alt="Efficient / Automated" /></li>
+                        <li><img src="/images/owners/easy-install.jpg" alt="Easy &amp; Quick Install" /></li>
+                    </ul>
+                    <div id="output"></div>
+                </div>
+    </div> <!-- #subpage-left -->
+</div><!-- #subpage-main -->
+<% end %>
+
+<% content_for :subpagesidebar do %>
+  <%= render :partial =>  "subpagesidebar_main",
+    :locals => { :sidebar_header => "Are your guests ready for Recess?", :sidebar_subheader => "Give your guests freedom and the quality of service they deserve. Happy guests means more money in your pocket." } %>
+<% end %>
+
+<% content_for :body do %>
+                <div id="subpage-bottom-content">
+                    <div id="subheader">
+                    <h2>Benefits &amp; Features</h2>
+                    <h4>A superior and cost-efficient paging &amp; waitlist management system. High tech has never been so simple.</h4>
+                    </div>
+                        <div id="sub-left">
+                            <h3>Easy to Use</h3>
+                            <p>We replicated, refined, and upgraded current waitlist practices to make the switch to Recess a piece of cake.</p>
+                            <h3>Significant Savings</h3>
+                            <p>No laptops, no kiosks, no lost/stolen pagers, and no bulky radio transmitters. All you need is an iPhone or iPod Touch to get set up.</p>
+                        </div>
+                        <div id="sub-middle">
+                            <h3>Additional Features</h3>
+                            <p>Upgrade the perception of your establishment with a sexy device.</p>
+                            <p>Visualize and compare your wait time and statistics with others around the world in your own administrative console.</p>
+                            <h3>Future Releases</h3>
+                            <p>2-Way paging allowing guests to automatically update their waitlist status remotely from their phones.</p>
+                        </div>
+                        <div id="sub-right">
+                            <h3>Scalable</h3>
+                            <p>If you think you&rsquo;ll need several licenses or are interested in a branded paging solution, we can work with you on a large-scale rollout plan and customized distribution.</p>
+                            <p><a class="contact-open" href="http://holmesmobile.wufoo.com/forms/contact-us/">Contact us</a> for more information.</p>
+                        </div>
+                </div> <!-- subpage-bottom-content -->
+
+                            <%= render(:partial =>  "offers") %>
+<% end %>

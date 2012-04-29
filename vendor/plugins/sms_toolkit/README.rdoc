@@ -1,0 +1,39 @@
+= SmsToolkit
+
+This is the collection of tools to help developing SMS applications.
+
+= Usage
+
+=== Phone Number Normalization
+
+If you want to get a phone number as just 10-digit string without
+the country code or complex parentheses and dashes, you can use the 
+normalization method:
+
+  SmsToolkit::PhoneNumbers.normalize("(012) 345-6789")   # => "0123456789"
+  SmsToolkit::PhoneNumbers.normalize("(0123) 45-67-89")  # => "0123456789"
+  SmsToolkit::PhoneNumbers.normalize("+10123456789")     # => "0123456789"
+  SmsToolkit::PhoneNumbers.normalize("000123456789")     # => "0123456789"
+  SmsToolkit::PhoneNumbers.normalize("0010123456789")    # => "0123456789"
+
+Normalization method will pass on blank strings, nil and whatever else
+that doesn't look like a number.
+
+=== Phone Number Formatting
+
+To unify the formatting of the phone numbers you can use the Northern
+US Formatting method. It will use the normalization first and then
+convert 10-digit numbers into the "(nnn) nnn-nnnn" format while
+leaving short codes intact.
+
+  SmsToolkit::PhoneNumbers.format("0123456789")          # => "(012) 345-6789"
+  SmsToolkit::PhoneNumbers.format("+10123456789")        # => "(012) 345-6789"
+  SmsToolkit::PhoneNumbers.format("(01234) 56-78-9")     # => "(012) 345-6789"
+
+This feature can also be used in views via the helper method:
+
+  formatted_phone_number("012-345-6789")
+
+= License
+
+SMS Toolbox is Copyright © 2008 {Aleksey Gureiev}[mailto:spyromus@noizeramp.com]. It is free software, and may be redistributed under the terms specified in the MIT-LICENSE file.

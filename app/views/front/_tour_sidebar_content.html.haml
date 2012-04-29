@@ -1,0 +1,24 @@
+#subpage-sidebar.tour-page
+  %ul.tour-nav-container
+    %li.tour-nav
+      %h3
+        %a{ :href => "#iphone-sidebar", :title => "Recess Terms of Service for Mobile Subscribers" } iPhone app
+    %li
+      %h3
+        %a{ :href => "#webapp-sidebar", :title => "Recess Terms of Service for Website Users" } Desktop app
+    %li
+      %h3    
+        %a{ :href => "#admin-sidebar", :title => "Privacy Policy of Holmes Mobile, Inc." } Dashboard
+  %ul.tour-sidebar
+    %li#iphone-sidebar  
+      %h3 The Recess iPhone app
+      %p Some stuff about the iPhone and iPod Touch app
+      %h4.demo-button= link_to "Take a tour", '#demo-modal', :class => 'jqModal tour button'
+    %li#webapp-sidebar
+      %h3 Our new desktop app
+      %p Some stuff about the webapp
+      %h4.demo-button= link_to "Try it now", '/webapp_demo', :class => 'launch-app webapp-popup try-it button', :target => "new"
+    %li#admin-sidebar
+      %h3 The Recess dashboard
+      %p Some stuff about the admin panel
+      %h4.demo-button= link_to_front "Sign up", 'pricing', :class => 'signup button'

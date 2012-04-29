@@ -1,0 +1,4 @@
+module FrontHelper
+
+
+end

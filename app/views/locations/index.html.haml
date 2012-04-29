@@ -1,0 +1,21 @@
+%h1
+  = @page_title = 'Locations'
+%p
+  = link_to 'Add a new location', new_location_path
+
+- unless @locations.empty?
+  %table#locations
+    %tr.first-row
+      %th.name  Name
+      %th.iid   Internal ID
+      %th
+    - @locations.each do |location|
+      %tr
+        %td.name= h(location.name)
+        %td.iid=  h(location.internal_id)
+        %td
+          = link_to "Logs", location_logs_path(location)
+        %td
+          = link_to "Edit", edit_location_path(location)
+        %td
+          = link_to "Delete", location_path(location), :method => "delete", :confirm => "Are you sure?"

@@ -1,0 +1,13 @@
+place1_1:
+  account:      place1
+  name:         First location
+  internal_id:  location_1
+
+place1_2:
+  account:      place1
+  name:         Second location
+  internal_id:  location_2
+
+place3:
+  account:      place3
+  name:         Alternative

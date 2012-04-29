@@ -1,0 +1,37 @@
+= @page_title = "Terms of Service"
+- content_for :description_header, "Recess Terms &amp; Conditions of Service"
+- content_for :header_class, "terms-of-service-header"
+
+- content_for :subpagetopcontent do
+  = render(:partial =>  "subpagetopcontent", :locals => { :header => "Terms &amp; Conditions" })
+
+- content_for :subpageleftcontent do
+  = render :partial =>  "terms_content"
+  = render :partial =>  "privacy_policy"
+  %br
+  :plain
+    </div> <!-- #subpage-left -->
+    </div><!-- #subpage-main -->
+
+- content_for :subpagesidebar do
+  #subpage-sidebar.content-sidebar
+    %h3 Navigation
+    %ul
+      %li
+        %ul
+          %li
+            %a.guillemot{ :href => "#tos-mobile", :title => "Recess Terms of Service for Mobile Subscribers" }
+              Recess Terms of Service for Mobile Subscribers
+      %li
+        %ul
+          %li
+            %a.guillemot{ :href => "#tos-website", :title => "Recess Terms of Service for Website Users" }
+              Recess Terms of Service for Website Users
+      %li
+        %ul
+          %li      
+            %a.guillemot{ :href => "#tos-privacy", :title => "Privacy Policy of Holmes Mobile, Inc." }
+              Privacy Policy
+  :plain
+    </div> <!-- #subpage-sidebar -->
+    </div> <!-- missing closing div -->

@@ -1,0 +1,30 @@
+.leftColumn
+  .addGuest
+    .header
+      %h2
+        Add guest
+    .flash{ :id => 'invalid' }
+      %h3.error
+        Invalid data!
+    .guestForm
+      = render :partial => 'guests/form'
+    .details{ :id => 'guest-details' }
+      = render :partial => 'guests/details'
+.rightColumn
+  .header
+    %h2
+      = link_to 'Waitlist', webapp_popup_guests_path
+  .waitlistButtons
+    %ul.waitlistButtons
+      %li
+        = link_to 'All', '#', :id => 'all', :class => 'active'
+      %li
+        = link_to 'Waiting', '#', :id => 'waiting_list'
+      %li
+        = link_to 'Paged', '#', :id => 'paged_list'
+      %li
+        = link_to 'Arrived', '#', :id => 'arrived_list'
+      %li
+        = link_to 'No-Show', '#', :id => 'noshow_list'
+  .list{ :id => 'guest-list' }
+    = render :partial => 'guests/guest_list'

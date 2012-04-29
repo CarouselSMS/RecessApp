@@ -1,0 +1,31 @@
+- if @feedback && !@feedback.new_record?
+	%p
+		%strong Thank you for getting in touch with us!
+	
+	%p Your data has been delivered to us, and ...
+
+- else
+	- form_for :feedback, @feedback, :url => feedback_path, :html => { :method => "post" } do |f|
+		= error_messages_for :feedback
+		
+		.field= f.text_field :name
+		.field= f.text_field :email
+		.field= f.text_field :company
+		.field= f.text_field :position
+		.field= f.text_field :industry
+		.field
+			%p Are you currently using a paging system?
+			= f.radio_button :using_ps, "1", :label => "Yes"
+			= f.radio_button :using_ps, "0", :label => "No"
+			= f.text_field   :using_ps_details, :label => "If yes, what kind? If no, why not?"
+		.field
+			%p Are you currently using a waitlist management system?
+			= f.radio_button :using_ws, "1", :label => "Yes"
+			= f.radio_button :using_ws, "0", :label => "No"
+			= f.text_field   :using_ws_details, :label => "If yes, what kind? If no, why not?"
+		.field= f.text_field :how_working, 			:label => "How could you see Recess working for you?"
+		.field= f.text_field :how_found,   			:label => "How did you find us?"
+		.field= f.text_area  :additional_info,  :label => "Is there any additional information you&rsquo;d like from us?"
+		.field= f.text_area  :comments, 				:label => "Additional comments / suggestions?"
+	
+		.commit= f.submit "Send"

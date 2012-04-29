@@ -1,0 +1,18 @@
+= @page_title = "Take a Tour"
+- content_for :description_header, "Tour Recess."
+- content_for :header_class, "tour-header"
+- content_for :subpagetopcontent do
+  = render :partial =>  "subpagetopcontent", :locals => { :header => "Take a Tour" }
+- content_for :subpageleftcontent do
+
+  = render :partial => "tour_content"
+
+  :plain
+    </div> <!-- #subpage-left -->
+    </div> <!-- #subpage-main -->
+  
+- content_for :subpagesidebar do
+  = render :partial =>  "tour_sidebar_content"
+  :plain
+    </div> <!-- #subpage-sidebar -->
+    </div> <!-- #subpage-top-content -->

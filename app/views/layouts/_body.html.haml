@@ -1,0 +1,42 @@
+= render :partial => "shared/toppanel"
+
+#header
+  #logo
+    %h1
+      = link_to "Recess - Simple SMS Waitlist Management", "/", :class => "png"
+  #header-nav.signedout.png
+    = render :partial => "shared/mainnav"
+
+= yield :header_box
+
+#content
+  = yield :subpagetopcontent
+  = yield :subpageleftcontent
+  = yield :subpagesidebar
+  = yield :body
+
+#demo-modal.jqmWindow
+  .top-bar
+    %h2.demo-description.png Tour Recess
+    %a.jqmClose.demo-close{ :href => '#', :title => 'Close' } Close
+  .waiting
+    %p
+      Loading, please wait...
+    %img{ :src => 'images/ajax-loader.gif', :alt => 'Loading...' }
+  .slideshowContent
+  
+#offer-modal.jqmWindow
+  .content
+    .top-bar
+      %h2.demo-description.png Offer
+      %a.jqmClose.demo-close{ :href => '#', :title => 'Close' } Close
+    .waiting
+      %p
+        Loading, please wait...
+      %img{ :src => 'images/ajax-loader.gif', :alt => 'Loading...' }    
+    .offerContent
+
+#footer.home
+  = render :partial => "shared/footers/pre_footer"
+  = render :partial => "shared/footers/nav"
+  = render :partial => "shared/footers/footer"

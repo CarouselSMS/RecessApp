@@ -1,0 +1,13 @@
+User data for signup form step <%= @step %>
+
+<% @partial_form.each do |key, value| %>
+<% if value.is_a?(Hash) %>
+  <%= "#{h(key)}: " %>
+  <% value.each do |k, v| %>
+    <%= "#{h(k)}: #{h(v)}" %>
+  <% end %>
+<% else %>
+  <%= "#{h(key)}: #{h(value)}" %>
+<% end %>
+
+<% end %>

@@ -1,0 +1,83 @@
+= @page_title = "Features &amp; Benefits"
+- content_for :description_header, "Recess paging system features and benefits. Ideal for restaurants, hospitals, hair salons, amusement parks and many others."
+- content_for :header_class, "features-header"
+- content_for :subpagetopcontent do
+  = render(:partial =>  "subpagetopcontent", :locals => { :header => "Features" })
+  #view-demo.subpage-tour
+    %a.view-demo.png.jqModal{ :href => '#demo-modal' }
+      Take a tour
+    %p.demo-link
+      %a.guillemot.jqModal{ :href => '#demo-modal' }
+        Take a tour
+- content_for :subpageleftcontent do
+  %div
+    %ul#gallery.pics.stripViewer
+      %li
+        %img{ :src => "/images/owners/save-money.jpg", :alt => "Recess costs less than a few pagers" }
+      %li.mobile
+        %img{ :src => "/images/slides/medium/08.jpg", :alt => "Run Recess from anywhere" }
+      %li
+        %img{ :src => "/images/guests/easy.jpg", :alt => "Easy to use" }
+      %li.customize
+        %img{ :src => "/images/slides/medium/14.jpg", :alt => "Customize messages, offers and more" }
+      %li.offer
+        %img{ :src => "/images/slides/medium/03.jpg", :alt => "Include an offer in every message you send" }
+      %li.locations
+        %img{ :src => "/images/slides/medium/15.jpg", :alt => "Set up multiple locations" }
+      %li
+        %img{ :src => "/images/guests/any-phone.jpg", :alt => "Recess works with every major US carrier" }
+      %li.offer
+        %img{ :src => "/images/slides/medium/11.jpg", :alt => "Engage your customers after they've left" }
+    #output
+  :plain
+    </div> <!-- #subpage-left -->
+    </div><!-- #subpage-main -->
+- content_for :subpagesidebar do
+  = render :partial =>  "subpagesidebar_main", :locals => { :sidebar_header => "Are you ready for Recess?", :sidebar_subheader => "Give your guests freedom and the quality of service they deserve. Happy guests means more money in your pocket." }
+- content_for :body do
+  #subpage-bottom-content
+    #subheader
+      %h2.subheader Benefits &amp; Features
+      %h4 Recess increases customer retention and decreases customer attrition.
+    #sub-left
+      %h3
+        Affordable
+      %p
+        Because you can run the entire paging system from an iPod Touch or iPhone, the entire setup costs less than replacing just four plastic pagers. We made it inexpensive because we'd like to see Recess everywhere, effectively eliminating wait time around the world.
+      %h3
+        Mobile
+      %p
+        Run the entire paging system from your hand or place it in a stand for stationary use.
+      %h3
+        Easy to Use
+      %p
+        We worked hard to make Recess simple and intuitive to use. Replicating traditional waitlist management work-flow, Recess is a no-brainer.
+    #sub-middle
+      %h3
+        Customizable
+      %p
+        Recess is built to fit your organization's specific needs. Whether you run a restaurant, hospital, church or amusement park, Recess allows you to modify message copy to fit your unique requirements.
+      %h3
+        Personal Dashboard
+      %p
+        Each account comes with its own personal dashboard, which you can access from any computer or mobile device with internet access. The dashboard lets you to manage your account, view statistics, change message copy and  messages to your subscribers.
+      %h3
+        Powerful Suggestion
+      %p
+        Add offers to each text-message. Suggest your guests visit a neighbor or buy a product while they wait. Swap out offers from your dashboard within minutes to direct your guests where you want during their wait.
+    #sub-right
+      %h3
+        Multiple Users &amp; Locations
+      %p
+        No need to create several accounts if you have more than one location. Create several locations under an administrative account and create multiple users to manage each location, all billed together.
+      %h3
+        Universally Compatible
+      %p
+        Reach cell phones on all of the major US carriers. Nearly all cell phones support text messaging.
+      %h3
+        Long-Term Communication
+      %p
+        Allow your guests to opt-in to your marketing list from their cell phones. Automate your list building with Recess's simple opt-in procedures.
+    .benefits-header
+      %h2.subheader.cufonify What this all means to...
+    = render :partial =>  "benefit_types"

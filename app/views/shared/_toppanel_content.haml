@@ -1,0 +1,9 @@
+:erb
+  <div id="<%= panelID %>" style="display: none;">
+.panelContent
+  .twoA{ :class => "#{ 'contact-details' if logged_in? }" }
+    .iframe-container
+      = render(:partial =>  "/shared/contact_details")
+  .twoB
+    .iframe-container
+      = render(:partial =>  "/shared/contact")

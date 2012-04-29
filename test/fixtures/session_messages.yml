@@ -1,0 +1,13 @@
+place1_pending:
+  account:            place1
+  kind:               <%= SessionMessage::KIND_CONFIRMATION %>
+  phone:              one
+  dlr_message_id:              123
+  dlr_status: 0
+
+place1_delivered:
+  account:            place1
+  kind:               <%= SessionMessage::KIND_CONFIRMATION %>
+  phone:              one
+  dlr_message_id:              124
+  dlr_status: 1

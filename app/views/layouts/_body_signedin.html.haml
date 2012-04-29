@@ -1,0 +1,27 @@
+= render :partial => "shared/toppanel_signedin"
+
+#header
+  #logo
+    %h1.png.signedin
+      = link_to "Recess - back to your account, home", "/", :class => "png signedin"
+  - if admin_subdomain?
+    #header-nav.png.signedin{ :class => "globaladmin" }
+      = render :partial => "shared/mainnav_signedin"
+  - else
+    #header-nav.png.signedin{ :class => admin? ? 'admin' : 'notadmin' }
+      = render :partial => "shared/mainnav_signedin"
+
+= yield :header_box
+
+#content.sub.signedin
+  .signedin
+    = flash_notices
+    = yield
+    .sidebar
+      = yield :sidebar
+      
+#footer.home
+  = render :partial => "shared/footers/pre_footer"
+  = render :partial => "shared/footers/signedin_nav"
+  = render :partial => "shared/footers/nav"
+  = render :partial => "shared/footers/footer"

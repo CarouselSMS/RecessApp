@@ -1,0 +1,12 @@
+<h1><%= @page_title = 'View Plan' %></h1>
+<p><%= link_to('Edit plan', :action => 'edit') %></p>
+<table id="subscription_plan">
+  <tr class="first-row">
+    <th>Name</th>
+    <td><%= h(@subscription_plan.name) %></td>
+  </tr>
+  <tr class="first-row">
+    <th>Revenue per Month</th>
+    <td><%= @subscription_plan.revenues.map {|r| "#{r[0].capitalize}: #{number_to_currency(r[1])}" }.join(' / ') %></td>
+  </tr>
+</table>

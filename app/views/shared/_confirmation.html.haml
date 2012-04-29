@@ -1,0 +1,10 @@
+.jqmConfirm#confirm
+  .jqmConfirmWindow
+    .top-bar
+      %h2.demo-description.png Confirm
+      %a.jqmClose.demo-close{ :href => '#', :title => 'Close the confirmation box' } Close      
+    .jqmConfirmContent
+      %p{ :class => "jqmConfirmMsg error"}
+        Continue?  
+    %input{ :type => "submit", :value => "Yes" }
+    %input{ :type => "submit", :value => "No" }

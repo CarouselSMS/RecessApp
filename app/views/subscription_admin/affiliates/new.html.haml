@@ -1,0 +1,6 @@
+%h1= @page_title = 'New Affiliate Account'
+
+%p= link_to 'Back to list', admin_affiliates_path
+
+- form_for [:admin, @affiliate] do |form|
+  = render :partial => 'form', :object => form

@@ -1,0 +1,60 @@
+<%= @page_title = "Opt-in, direct text-message marketing is your own salesperson in your customer&rsquo;s pocket" %>
+
+<% content_for :head do %>
+<meta name="Description" content="Put your list building efforts on autopilot with Recess. Build an opt-in direct marketing list while helping serve your guests. Doesn’t get much simpler than this." />
+<meta name="Keywords"content="sms, marketing, promotions, opt-in, list building, text message, sms, recess" />
+<% end %>
+
+<% content_for :description_header, "SMS marketing is known to be one of the most effective and powerful direct marketing methods, and Recess makes it simple." %>
+<% content_for :header_class, "marketers-header" %>
+
+<% content_for :subpagetopcontent do %>
+  <%= render(:partial =>  "subpagetopcontent", :locals => { :header => "Marketers" })  %>
+<% end %>
+
+<% content_for :subpageleftcontent do %>
+                <div>
+                    <ul id="gallery" class="pics stripViewer">
+                        <li><img src="images/marketers/marketers-promote.jpg" alt="Promote Specials" /></li>
+                        <li><img src="images/marketers/marketers-lists.jpg" alt="Build Mobile Marketing Lists" /></li>
+                        <li><img src="images/marketers/track.jpg" alt="Track Data / Users" /></li>
+                        <li><img src="images/marketers/all-phones.jpg" alt="Works With All Phones" /></li>
+                    </ul>
+                    <div id="output"></div>
+                </div>
+    </div> <!-- #subpage-left -->
+</div><!-- #subpage-main -->
+<% end %>
+
+<% content_for :subpagesidebar do %>
+  <%= render :partial =>  "subpagesidebar_main",
+    :locals => { :sidebar_header => "Are you ready for Recess?", :sidebar_subheader => "Give your guests freedom and the quality of service they deserve. Happy guests means more money in your pocket." } %>
+<% end %>
+
+<% content_for :body do %>
+                <div id="subpage-bottom-content">
+                    <div id="subheader">
+                    <h2>Benefits &amp; Features</h2>
+                    <h4>Keep your customers and guests in the loop with text message marketing. Recess helps you keep them updated.</h4>
+                    </div>
+
+                        <div id="sub-left">
+                            <h3>Easy to Use</h3>
+                            <p>After being added to your waitlist, Recess asks guests if they would like to subscribe to updates, automatically adding them to your opt-in list.</p>
+                            <p>You can then send guests updates and special offers through your own web-based administrative console.</p>
+                        </div>
+                        <div id="sub-middle">
+                            <h3>Direct Marketing</h3>
+                            <p>Because all of your guests have opted-in to your updates, they <em>want</em> to receive text messages from you. Benefit from text message open rates of 95-100% and response rates of 12-20%.</p>
+                            <p>Offer coupons, surveys, or other specials and easily measure redemption and response rates, among other metrics.</p>
+                        </div>
+                        <div id="sub-right">
+                            <h3>Additional Features</h3>
+                            <p>Add offers and specials to text messages while guests wait. Suggest a special going on next door or at your bar that guests can check out while they wait.</p>
+                            <h3>Future Releases</h3>
+                            <p>Recess gives you your own dedicated text message 'keyword', so you can further build your opt-in list by adding information to your already existing marketing material.</p>
+                        </div>
+                </div> <!-- subpage-bottom-content -->
+
+                            <%= render(:partial =>  "offers") %>
+<% end %>

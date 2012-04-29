@@ -1,0 +1,13 @@
+%h1= @page_title = 'Change Plan'
+
+%p{ :style => "padding-top:1em;" }>
+  You are currently subscribed to the
+  %strong
+    = @subscription.subscription_plan.name
+    Plan.
+  :erb
+    Next billing date: <%= @subscription.next_renewal_at.to_s(:long_day) %>.
+
+%p
+  More plans coming soon. If you're finding your current plan limiting and have suggestions on how we can improve, please
+  =mail_to "support@recessapp.com", "email us."

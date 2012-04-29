@@ -1,0 +1,6 @@
+development:
+  login:    ''
+  password: ''
+test:
+  login:    ''
+  password: ''

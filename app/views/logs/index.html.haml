@@ -1,0 +1,31 @@
+%h1
+  Listing Logs for
+  = @location.name
+
+%table
+  %th
+    ID
+  %th
+    User
+  %th
+    Time
+  %th
+    Guest
+  %th
+    Changes
+  - @logs.each do |log|
+    %tr
+      %td
+        = log.id
+      %td
+        = log.user ? log.user.login : '-'
+      %td
+        = log.created_at.strftime("%m/%d/%Y %I:%M")
+      %td
+        Guest 
+        = "##{ log.auditable_id }"
+      %td
+        = log.changes.inspect
+
+= will_paginate @logs if @logs.any?
+      

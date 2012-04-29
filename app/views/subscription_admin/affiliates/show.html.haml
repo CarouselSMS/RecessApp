@@ -1,0 +1,47 @@
+%h1= @page_title = 'View Affiliate Account'
+
+%p= link_to 'Back to list', admin_affiliates_path
+%p= link_to 'Edit account', :action => :edit
+%p= link_to 'Monthly stats', :action => :monthly_stats
+%p= link_to 'Referenced Accounts', :action => :accounts
+
+%table#affiliate
+  %tr
+    %th Name
+    %td= h(@affiliate.name)
+  %tr
+    %th URL
+    %td= base_host + partner_path(@affiliate.slug)
+  %tr
+    %th Email
+    %td= h(@affiliate.email)
+  %tr
+    %th Created on
+    %td= h(@affiliate.created_at.to_s(:short_day))
+  %tr
+    %th Lifetime revenue
+    %td= number_to_currency(@affiliate.revenue)
+  %tr
+    %th Lifetime payout
+    %td= number_to_currency(@affiliate.payout)
+  %tr
+    %th Percent
+    %td= "#{@affiliate.percent}%"
+  %tr
+    %th References
+    %td= @affiliate.references_count
+  %tr
+    %th Signups
+    %td= @affiliate.accounts_count
+
+  %tr
+    %th &nbsp;
+    %td
+
+  %tr
+    %th= "Payment this month (#{Date.today.to_s(:month_year)})"
+    %td= number_to_currency(@affiliate.payout_this_month)
+
+  %tr
+    %th= "Payment this month (#{(Date.today - 1.month).to_s(:month_year)})"
+    %td= number_to_currency(@affiliate.payout_previous_month)

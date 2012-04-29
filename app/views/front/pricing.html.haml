@@ -1,0 +1,88 @@
+= @page_title = "Pricing &amp; Signup"
+- content_for :description_header, "Recess paging system pricing information and trial signup."
+- content_for :header_class, "pricing-header"
+- content_for :subpagetopcontent do
+  = render(:partial =>  "subpagetopcontent", :locals => { :header => "Pricing &amp; Signup" })
+- content_for :subpageleftcontent do
+  .price-container
+    %h1.price<>
+      $79
+    %h1<>
+      \/mo
+    %h2.subheader For unlimited paging, per location
+    %h3 15-day free trial
+    .button-container
+      %h4.demo-button
+        %a.try-it.button{ :href => "http://www.recessapp.com/signup" }
+          Try it for free
+      %h4.or.cufonify or
+      %h4.demo-button
+        %a.tour.button.jqModal{ :href => "#demo-modal" }
+          Try it for free
+      %h4.app-store
+        %a.png{ :href => 'http://www.itunes.com/app/RecessPagingSystem', :title => 'Recess Paging System available in the App Store!' }
+          Available in the App Store
+  .cover-photo-container
+  :plain
+    </div> <!-- #subpage-left -->
+    </div><!-- #subpage-main -->
+- content_for :subpagesidebar do
+  #subpage-sidebar
+    .step1.cta-box
+      %h3 Step 1
+      %h3
+        %a.guillemot{ :href => "/signup" }<
+          Sign up for a Recess account
+      %p
+        This begins your 15-day free trial
+    .step2.cta-box
+      %h3 Step 2
+      %h3
+        %a.guillemot{ :href => "http://store.apple.com/us" }<
+          Pick up an iPod
+      %p
+        Either an iPod Touch or an iPhone (any generation) will work.
+      %p
+        You, your host or your receptionist will use the device to run Recess.
+      %p
+        %a{ :href => "http://www.apple.com/buy/locator/service" }
+          Find stores near you
+        &nbsp;or
+        %br
+        %a{ :href => "http://store.apple.com/us/browse/home/shop_ipod/family/ipod_touch?mco=MTExNzQzMzI" }
+          order online.
+    .step3.cta-box
+      %h3 Step 3
+      %h3
+        %a.guillemot{ :href => "http://www.itunes.com/app/RecessPagingSystem" } Download Recess on iTunes
+      %p
+        The download is free. Once installed, login to your account and you're ready to go!
+  :plain
+    </div>
+- content_for :body do
+  #subpage-bottom-content.fix
+    .about-recess.pricing-details
+      .what-is-recess
+        %h2.subheader.cufonify
+          What's included?
+        %ul
+          %li
+            An unlimited number of pages and notifications
+          %li
+            The power to customize your messages and offers
+          %li
+            Access to your own personal dashboard with statistics
+          %li
+            The ability to create multiple locations and users
+      .why-recess
+        %h2.subheader.cufonify
+          Additional Information
+        %ul
+          %li
+            All accounts come with a 15-day free trial
+          %li
+            No contracts
+          %li
+            Recess is a month-to-month service, cancel anytime
+          %li
+            You'll need an iPhone or iPod Touch to run the Recess Paging System

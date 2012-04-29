@@ -1,0 +1,33 @@
+%meta{ "http-equiv" => "content-type", "content" => "text/html;charset=UTF-8" }
+- unless RAILS_ENV == "production"
+  %meta{ "name" => "ROBOTS", "content" => "NOINDEX,NOFOLLOW" }
+%title= @page_title ? "#{@page_title} | #{AppConfig['app_name']}" : AppConfig['app_name']
+%link{ :rel => "icon", :href => "/images/favicon.ico", :type => "image/x-icon" }
+
+= javascript_tag "window._base_domain = 'http://www.#{AppConfig['base_domain']}'"
+%script{:type => "text/javascript", :src  => "http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" }
+
+= stylesheet_link_tag "ss-sprite", "compiled/screen.css", "jqModal", :media => "screen, projection", :cache => "cache/all"
+= javascript_include_tag "jrails", "cufon/cufon-yui", "cufon/Helvetica_Neue_500-Helvetica_Neue_700-Helvetica_Neue_italic_500-Helvetica_Neue_italic_700.font", "jquery.cycle.min", "jquery.scrollTo-1.4.2-min", "jquery.localscroll-1.2.7-min", "jquery.popup.min", "jquery.qtip-1.0.0-rc3.min", "jqModal", "application", "init", "jquery.maskedinput-1.2.2.min", :cache => "cache/all"
+   
+= stylesheet_link_tag 'compiled/print.css', :media => 'print'
+
+-# IE6 conditional CSS and javascript
+/[if IE]
+  = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
+/[if IE 6]
+  = stylesheet_link_tag 'compiled/ie6.css', :media => 'screen, projection'
+/[if IE 6]
+  = javascript_include_tag 'DD_belatedPNG_0.0.8a-min'
+  %script{ :type => 'text/javascript' }
+    DD_belatedPNG.fix('img, .png');
+
+-# Load jQuery-UI only for use in date picker, logged in view. Loaded here in case jQuery-UI needs to be used elsewhere.
+- if logged_in?
+  %script{:type => "text/javascript", :src  => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js" }
+= yield :head
+
+-# For testing base_domain locally
+-# = javascript_tag "window._base_domain = 'http://192.168.182.130:3000'"
+
+= render :partial => "shared/clicktale_top" unless Rails.env == "development"

@@ -1,0 +1,24 @@
+place1_1:
+  account:                place1
+  subscription_plan:      basic
+  user_limit:             nil
+  prepaid_message_count:  250
+  next_renewal_at:        <%= 1.day.ago.to_s(:db) %>
+  amount:                 30
+  card_number:            XXXX-XXXX-XXXX-1111
+  card_expiration:        05-2012
+  billing_id:             foo
+  state:                  trial
+
+place2:
+  account:                place2
+  subscription_plan:      basic
+  user_limit:             nil
+  prepaid_message_count:  250
+  next_renewal_at:        <%= 1.day.ago.to_s(:db) %>
+  amount:                 30
+  card_number:            XXXX-XXXX-XXXX-1111
+  card_expiration:        05-2012
+  billing_id:             foo
+  discount:               sub
+  state:                  active

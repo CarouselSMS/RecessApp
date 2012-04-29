@@ -1,0 +1,19 @@
+place1_one_m1:
+  account:  place1
+  kind:     <%= MarketingMessage::KIND_MANUAL %>
+  body:     manual
+
+place1_one_more1:
+  account:  place1
+  kind:     <%= MarketingMessage::KIND_OFFER_DETAILS %>
+  body:     more
+
+place1_two_m1:
+  account:  place1
+  kind:     <%= MarketingMessage::KIND_MANUAL %>
+  body:     manual
+
+place2_one_m1:
+  account:  place2
+  kind:     <%= MarketingMessage::KIND_MANUAL %>
+  body:     manual

@@ -1,0 +1,19 @@
+%ul.tour-galleries
+  %li.tour-iphone
+    %a.jqModal.tour-gallery.png{ :href => '#demo-modal', :title => 'See a slideshow tour demonstrating Recess in action at a busy restaurant' } Come take a tour!
+  %li.tour-webapp
+    %a.tour-gallery.launch-app.webapp-popup= link_to "Try it now", '/webapp_demo'
+  %li.tour-admin
+    %ul#gallery.pics.stripViewer
+      %li
+        %img{ :src => "/images/owners/save-money.jpg", :alt => "Recess costs less than a few pagers" }
+      %li
+        %img{ :src => "/images/slides/medium/08.jpg", :alt => "Run Recess from anywhere" }
+      %li
+        %img{ :src => "/images/guests/easy.jpg", :alt => "Easy to use" }
+      %li
+        %img{ :src => "/images/slides/medium/14.jpg", :alt => "Customize messages, offers and more" }
+      %li
+        %img{ :src => "/images/slides/medium/03.jpg", :alt => "Include an offer in every message you send" }
+    #output
+    

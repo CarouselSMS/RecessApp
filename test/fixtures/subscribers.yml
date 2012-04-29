@@ -1,0 +1,4 @@
+place1_1:
+  account:          place1
+  phone:            two
+  next_renewal_at:  <%= 5.days.from_now.to_s(:db) %>

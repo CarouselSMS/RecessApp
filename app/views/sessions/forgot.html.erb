@@ -1,0 +1,33 @@
+<% content_for :description_header, "Forgotten Password" %>
+<% content_for :header_class, "forgot-header" %>
+
+<% content_for :subpagetopcontent do %>
+  <div id="subpage-top-content">
+    <div id="subpage-main">
+      <div id="subpage-left">
+<% end %>
+
+<% content_for :subpageleftcontent do %>
+  <h1><%= @page_title = 'Reset your password' %></h1>
+  <p>
+    If you&rsquo;ve forgotten your password, you can submit your email address
+    here to request a password reset.  A confirmation email will be sent to
+    you which will contain a link you can use to reset your password.
+  </p>
+
+  <% form_tag :action => 'forgot' do %>
+    <label>Email:</label>
+    <%= text_field_tag :email %>
+    <br/>
+    <%= submit_tag 'Submit reset request' %>
+  <% end %>
+  </div> <!-- #subpage-left -->
+</div><!-- #subpage-main -->
+<% end %>
+
+<% content_for :subpagesidebar do %>
+<div id="subpage-sidebar" class="content-sidebar">
+  <h3>Please fill out this form to reset your password.</h3>
+ </div> <!-- #subpage-sidebar -->
+</div> <!-- missing closing div -->
+<% end %>

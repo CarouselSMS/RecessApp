@@ -1,0 +1,4 @@
+RewriteEngine On 
+
+RewriteCond %{HTTP_HOST} ^recessapp.com
+RewriteRule (.*) http://www.recessapp.com/$1 [R=301,L]

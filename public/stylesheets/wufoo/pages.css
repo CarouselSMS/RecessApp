@@ -1,0 +1,15 @@
+body {
+	font-family: Helvetica, Arial, sans-serif;
+}
+h2 {
+	font-weight: 700;
+	font-size:2em;
+	margin-bottom:0;
+	color: #3491D1
+}
+
+p {
+	color:#626262;
+	text-align:left;
+	font-size:90%;
+}

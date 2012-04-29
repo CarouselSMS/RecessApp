@@ -1,0 +1,10 @@
+= @page_title = "Thanks for signing up!"
+- content_for :description_header, "Thanks for signing up!"
+- content_for :header_class, "thanks-header"
+- content_for :subpagetopcontent do
+  #subpage-top-content
+    #subpage-main
+      #subpage-left
+        = render :partial => "welcome", :locals => { :account => Account.find(flash[:account_id]) }
+    #subpage-sidebar.content-sidebar
+      %h3 Welcome to Recess.

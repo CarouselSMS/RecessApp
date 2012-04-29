@@ -1,0 +1,28 @@
+place1:
+  name:             Place 1
+  full_domain:      place1.host
+  venue_name:       place1 name
+  venue_address:    place1 address
+  venue_type:       other
+  venue_type_other: restaurant
+  conf_message:     You've been added
+  conf_prepend_venue: false
+  page_message:     Your table is ready
+  page_prepend_venue: true
+  current_offer:    place1_1
+
+place2:
+  name:             Place 2
+  full_domain:      2place.host
+  venue_name:       place2 name
+  venue_address:    place2 address
+  venue_type:       other
+  venue_type_other: restaurant
+  
+place3:
+  name:             Place 3
+  full_domain:      place3.host
+  venue_name:       place3 name
+  venue_address:    place3 address
+  venue_type:       other
+  venue_type_other: restaurant

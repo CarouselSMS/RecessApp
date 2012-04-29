@@ -1,0 +1,57 @@
+.nav.signedin
+  - if admin_subdomain?
+    %ul.fsubscriptions
+      %li
+        %h3= tab_link_to :subscriptions,  'Subscriptions',  admin_subscriptions_path
+    %ul.faccounts
+      %li
+        %h3= tab_link_to :accounts,       'Accounts',       admin_accounts_path
+        %ul
+          %li
+            %h5= link_to "All Accounts in CSV", admin_accounts_path(:format => 'csv')
+    %ul.fplans
+      %li
+        %h3= tab_link_to :plans,          'Plans',          admin_subscription_plans_path
+        -# This is what I'd like to do: @subscription_plans.each do |plan|
+          -# %ul
+            -# %li
+              -# %h5= link_to(h(plan.name), [:admin, plan])
+    %ul.fdiscounts
+      %li
+        %h3= tab_link_to :discounts,      'Discounts',      admin_subscription_discounts_path
+        -# This is what I'd like to do: @subscription_discounts.each do |discount|
+          -# %ul
+            -# %li
+              -# %h5= link_to(h(discount.name), [:admin, discount])
+  - else
+    - if admin?
+      %ul.faccount
+        %li
+          %h3= tab_link_to :account,      'Account',        account_url
+        %li
+          %h5= link_to 'Locations',    locations_path
+        %li
+          %h5= link_to 'Users',        '/users'
+        %li
+          %h5= link_to 'Edit account', edit_account_url
+        - unless current_account.locally_registered?
+          %li
+            %h5= link_to 'Change plan',  plan_account_url
+        %li
+          %h5= link_to 'Billing info', billing_account_url
+        %li
+          %h5= link_to 'Cancel plan',  cancel_account_url
+    %ul.foffers
+      %li
+        %h3= tab_link_to :offers,         'Offers',         offers_path
+      %li
+        %h5= link_to "Add an offer", new_offer_path
+    %ul.fsubscriptions
+      %li
+        %h3= tab_link_to :subscribers,    'Subscribers',    subscribers_path
+    %ul.fmessages
+      %li
+        %h3= tab_link_to :messages,       'Messages',       messages_path
+    %ul.fstatistics
+      %li
+        %h3= tab_link_to :statistics,     'Statistics',     statistics_path

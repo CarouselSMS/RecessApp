@@ -1,0 +1,60 @@
+%h1
+  = @page_title = 'Messages'
+
+- form_for :account, @account, :url => { :action => "update" } do |f|
+  .section
+    %h2 Confirmation message
+    %fieldset
+      %table.message_options{ :style => "width: 480px;" }
+        %tr
+          %td.tip.prependOffer{ :title => "Select an Offer to be added to the message (or choose No Offer)" }
+            Offer:
+            %select{ :name => "account[offer_id]", :id => "account_offer_id" }
+              %option{ :value => "", :offer => "", :selected => @account.offer_id.nil? ? "selected" : nil } No offer
+              - @account.offers.each do |offer|
+                %option{ :value => offer.id, :offer => h(offer.text), :selected => (@account.offer_id == offer.id ? "selected" : nil) }= h(offer.name)
+          %td.tip.prependVenue{ :title => "This will put the name of your establishment, as specified in your Account settings under Location, at the beginning of the message" }
+            = f.check_box :conf_prepend_venue, :label => false, :disabled => (@account.venue_name? ? nil : true)
+            Prepend venue name
+            == (#{link_to "edit", edit_account_url})
+      .preview
+        %textarea{ :class => "sms-field-sp", :rows => "8", :cols => "40", :id => "conf_preview", :readonly => "1", :disabled => "1" }
+      = f.text_area :conf_message, :label => false, :rows => 4, :cols => 40
+      .test
+        %label Send test confirmation to phone (10 digits):
+        %input{ :type => "text", :id => "c_phone_number", :class => "phone_number"}
+        %button{ :id => "send_test_conf" } Send Test
+        %span#c_status
+  
+  .section
+    %h2 Page
+    %fieldset
+      %table.message_options
+        %tr
+          %td.tip{ :title => "This tells your guests how to subscribe to your list" }
+            = f.check_box :page_append_sub, :label => false
+            Append SUB wording
+          %td.tip{ :title => "This will put the name of your establishment, as specified in your Account settings under Location, at the beginning of the message" }
+            = f.check_box :page_prepend_venue, :label => false, :disabled => (@account.venue_name? ? nil : true)
+            Prepend venue name
+            == (#{link_to "edit", edit_account_url})
+      .preview
+        %textarea{ :class => "sms-field-sp", :rows => "8", :cols => "40", :id => "page_preview", :readonly => "1", :disabled => "1" }
+      = f.text_area :page_message, :label => false, :rows => 4, :cols => 40
+      .test
+        %label Send test page to phone (10 digits):
+        %input{ :type => "text", :id => "p_phone_number", :class => "phone_number"}
+        %button{ :id => "send_test_page" } Send Test
+        %span#p_status
+
+  = f.submit "Save Changes"
+
+%script{ :type => "text/javascript", :charset => "utf-8" }
+  == var venue_name = '#{escape_javascript(current_user.location ? current_user.location.name : @account.venue_name)}';
+  :plain
+    $(function() {
+      $("#account_conf_message").message_editor(true, venue_name);
+      $("#account_page_message").message_editor(false, venue_name);
+      $("#send_test_conf").send_test_message("send_test_conf", "#c_phone_number", "#c_status");
+      $("#send_test_page").send_test_message("send_test_page", "#p_phone_number", "#p_status");
+    });

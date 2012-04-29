@@ -1,0 +1,30 @@
+%h1= @page_title = 'Affiliates'
+
+%p= link_to 'Add new account', new_admin_affiliate_path
+%p= link_to 'View payouts', payouts_admin_affiliates_path
+
+%table#affiliates
+  %tr.first-row
+    %th= paged_sorted_self_link("First",      "first_name")
+    %th= paged_sorted_self_link("Last",       "last_name")
+    %th.tip{ :title => "This is the affiliate's code, used to generate their unique URL" }
+      =  paged_sorted_self_link("Code",       "slug")
+    %th= paged_sorted_self_link("Email",      "email")
+    %th= paged_sorted_self_link("Payout",     "payout")
+    %th= paged_sorted_self_link("Revenue",    "revenue")
+    %th.tip{ :title => "This represents: the number of referred users/how many the affiliate has signed up/their conversion rate" }
+      Counters
+    %th= paged_sorted_self_link("Created on", "created_at")
+
+  - @affiliates.each do |affiliate|
+    %tr
+      %td= link_to(h(affiliate.first_name), [:admin, affiliate])
+      %td= link_to(h(affiliate.last_name), [:admin, affiliate])
+      %td= affiliate.slug
+      %td= affiliate.email
+      %td= number_to_currency(affiliate.payout)
+      %td= number_to_currency(affiliate.revenue)
+      %td= "#{affiliate.references_count}/#{affiliate.accounts_count}/#{affiliate.ratio}"
+      %td= affiliate.created_at.to_s(:us)
+
+= will_paginate(@affiliates)

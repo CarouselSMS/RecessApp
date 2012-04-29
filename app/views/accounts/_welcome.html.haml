@@ -1,0 +1,56 @@
+- a = account
+- u = a.users.first
+- s = a.subscription
+
+%h1 Welcome to Recess
+  
+%p== Hi #{u.login},
+
+%p Welcome to Recess and thanks for signing up!
+
+%h2 Important account information
+
+%p
+  %strong Log in to your account:
+  %br
+  = link_to "http://#{a.full_domain}", "http://#{a.full_domain}"
+
+%p
+  %strong Username:
+  %br
+  = u.login
+
+.account_info
+  - billing_date = s.subscription_plan.first_billing_at.to_s(:short_day)
+  %strong== Your #{s.subscription_plan.trial_period}-day trial ends on #{billing_date}.
+  %p
+    If you don't cancel your account before this date
+    - unless s.unlimited_messaging?
+      == or before you use up #{s.prepaid_message_count} free credits
+    == your account card will be charged a monthly rate of #{number_to_currency(s.amount)}
+    == starting on #{billing_date}.
+    If you upgrade or downgrade your account, the monthly rate will change.
+    The charge on your credit card will be from "Recess Mobile, Inc."
+
+  %p
+    == Please review the #{link_to "refund policy", "http://#{AppConfig['base_domain']}/terms"}.
+
+%h2 Upgrade, Downgrade, or Cancel your account anytime by visiting
+
+%p
+  = link_to "http://#{a.full_domain}/account", "http://#{a.full_domain}/account"
+
+%p Thank you for choosing to use Recess to manage your waitlist.
+
+%p Wishing you the best success.
+
+%p== &mdash; The #{link_to "Recess", "http://www.#{AppConfig['base_domain']}"} team
+
+.need_help
+  %h2 Need Help?
+
+  %p
+    Get your questions answered in our
+    = link_to "Help &amp; FAQs", "http://#{AppConfig['base_domain']}/help"
+    section, or email customer support at
+    = mail_to "support@recessapp.com"

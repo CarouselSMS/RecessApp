@@ -1,0 +1,47 @@
+<%= @page_title = "Text message waitlist management" %>
+
+<% content_for :head do %>
+<meta name="Description" content="An alternative to traditional paging systems offers increased flexibility, advanced paging functionality, and tools never before seen. Recess is the next step in paging evolution." />
+<meta name="Keywords" content="paging system, text message paging, sms marketing, recess" />
+<% end %>
+
+<% content_for :header_box do %>
+  <%= render :partial =>  "header_box_cta" %>
+<% end %>
+
+<% content_for :body do %>
+    <div class="about-recess">
+      <div class="what-is-recess">
+        <h1>What is Recess?</h1>
+        <p>Recess is a two-way text-message paging and mobile marketing platform ideal for any business where guests experience wait times.</p>
+        <p>Recess frees your guests during those waits, while keeping <em>you</em> in control.</p>
+        <p><a class="jqModal" href="#demo-modal">Check out our slideshow showing how you can use Recess in a busy restaurant.</a></p>
+      </div>
+      <div class="why-recess">
+        <h1 class="png">Why Recess?</h1>
+        <p>It&rsquo;s the only paging system that runs entirely off of an iPod or iPhone. With packages starting under $200 installed, Recess is the most cost-effective text message paging solution available.</p>
+        <p>Recess comes complete with powerful promotional tools, an easy-to-use interface and a simple management dashboard.</p>
+      </div>
+    </div>
+                <div id="subpage-bottom-content" class="home-page">
+                        <div id="sub-left">
+                            <h3><span class="ss_sprite ss_email_edit">&nbsp;</span>Custom Messages</h3>
+                            <p>Each text message can be modified to suit your specific needs.</p>
+                            <h3><span class="ss_sprite ss_application_form">&nbsp;</span>Personal Dashboard</h3>
+                            <p>Each account comes with its own personal website to monitor activity and send marketing messages to your subscriber list.</p>
+                        </div>
+                        <div id="sub-middle">
+                            <h3><span class="ss_sprite ss_controller">&nbsp;</span>Interactive</h3>
+                            <p>Guests can reply from their cell phones for additional information and subscribe to your marketing campaigns.</p>
+                            <h3><span class="ss_sprite ss_world">&nbsp;</span>Universal</h3>
+                            <p>99% of cell phones are capable of receiving text messages.</p>
+                        </div>
+                        <div id="sub-right">
+                            <h3><span class="ss_sprite ss_house">&nbsp;</span>Multiple Locations</h3>
+                            <p>Manage several locations with just one account and one credit card.</p>
+                            <h3><span class="ss_sprite ss_group">&nbsp;</span>Multiple Users</h3>
+                            <p>Create several users per account and assign each to a different location.</p>
+                        </div>
+                </div> <!-- subpage-bottom-content -->
+  <%= render :partial =>  "offers" %>
+<% end %>

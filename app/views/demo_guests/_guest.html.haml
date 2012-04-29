@@ -1,0 +1,18 @@
+- r = cycle('odd', 'even', :name => 'guests')
+- if @guest && guest.id == @guest.id.to_i
+  - row = "#{ r == 'even' ? 'e' : '' } selected"
+- else
+  - row = r
+%tr.guest{ :class => row }
+  %td
+    %a{ :href => '#' }
+      %strong
+        = guest.id
+  %td.guest-info
+    /= link_to_remote guest.note, :url => demo_guest_path(guest), :method => :get, :html => { :class => 'guest-link' }
+    = link_to guest.note, demo_guest_path(guest), :class => 'show-guest'
+    = guest.remaining_wait_time
+    = "(#{ guest.aasm_state }: #{ guest.waiting_time })" unless guest.remaining_wait_time.blank?
+    
+  %td
+    = link_to_remote 'Page', :url => page_demo_guest_path(guest), :loading => "$('#indicator').show();", :complete => "$('#indicator').hide();"

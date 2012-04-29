@@ -1,0 +1,18 @@
+%h1
+  = @page_title = 'Subscribers'
+
+%table#subscribers
+  %tr
+    %th   Subscribers
+    %td=  current_account.subscribers_count
+  %tr
+    %th   Messages
+    %td
+      = @message_count
+      - if @message_count > 0
+        &nbsp;
+        = link_to "Show Log", url_for(:action => 'message_log')
+
+- form_for :message, :url => url_for(:action => 'send_message') do |f|
+  = f.text_area :body, :label => "<span class='tip' title='Send a message to all of your subscribers, up to 160 characters'>Message</span>", :class => "sms-field", :rows => '8', :cols => '55'
+  = f.submit "Send"

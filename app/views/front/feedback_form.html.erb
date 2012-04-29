@@ -1,0 +1,32 @@
+﻿<%= @page_title = "Beta Partners Get a Free License, Please Fill Out the Short Form" %>
+<% content_for :description_header, "" %>
+<% content_for :header_class, "feedback-form-header" %>
+
+<% content_for :head do %>
+<meta name="Description" content="Recess is giving away free licenses to select beta partners. Give us some feedback and we’ll do our best to partner with you." />
+<meta name="Keywords"content="free license, feedback, contact, form, recess, sms paging, text message paging system, waitlist management" />
+<% end %>
+
+<% content_for :subpagetopcontent do %>
+  <%= render(:partial =>  "subpagetopcontent", :locals => { :header => "Feedback Form" }) %>
+<% end %>
+
+
+<% content_for :subpageleftcontent do %>
+
+  <div class="feedback-form">
+  <%= render(:partial =>  "feedback_form_contents_wufoo_js") %>
+  </div>
+    </div> <!-- #subpage-left -->
+</div><!-- #subpage-main -->
+<% end %>
+
+
+<% content_for :subpagesidebar do %>
+                    <div id="subpage-sidebar" class="content-sidebar">
+                        <h3>The deal</h3>
+                        <p>Recess is currently in limited private release, but we’re looking for feedback and potential launch partners. Please fill out the form below if you think you’re ready for Recess or have any comments/suggestions. We’re giving away free product licenses to selected beta partners – take a minute to fill out the form below so you don’t miss out.</p>
+
+                    </div> <!-- #subpage-sidebar -->
+                    </div> <!-- missing closing div -->
+<% end %>

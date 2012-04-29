@@ -1,0 +1,17 @@
+= error_messages_for :user
+
+= f.text_field :name,   :label => "<span class='tip' title='The user&rsquo;s real name'>Name</span>"
+= f.text_field :login,  :label => "<span class='tip' title='The username for signing in'>Login</span>"
+= f.text_field :email,  :label => "<span class='tip' title='The user&rsquo;s email address'>Email</span>"
+= f.text_field :mobile, :label => "Cell phone number", :label => "<span class='tip' title='The user&rsquo;s cell phone number for emergency alerts, password resets and receiving test messages; Msg&data rates may apply'>Cell phone number</span>"
+= location_select f
+%p{ :style => "margin: 0.5em 0" }
+  Users can be assigned to only one location at a time.
+%label
+  Password
+= f.password_field :password
+%label
+  Password again
+= f.password_field :password_confirmation
+
+= submit_or_cancel

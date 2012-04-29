@@ -1,0 +1,13 @@
+valid_affiliate1:
+  first_name: Fname
+  last_name: Lname
+  email: test@example.com
+  slug: test_slug
+  percent: 20
+valid_affiliate2:
+  first_name: Nikolas
+  last_name: Cage
+  email: cage@example.com
+  slug: nikolas-cage
+  percent: 25
+  

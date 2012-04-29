@@ -1,0 +1,24 @@
+%table
+  %tr
+    %th{ :colspan => '3' }
+      %h3 Waiting
+  = render :partial => 'guests/guest', :collection => @waitlist.guests.waiting
+- reset_cycle('guests')
+%table
+  %tr
+    %th{ :colspan => '3' }
+      %h3 Paged
+  = render :partial => 'guests/guest', :collection => @waitlist.guests.paged
+- reset_cycle('guests')
+%table
+  %tr
+    %th{ :colspan => '3' }
+      %h3 Arrived
+  = render :partial => 'guests/guest', :collection => @waitlist.guests.arrived
+- reset_cycle('guests')
+%table
+  %tr
+    %th{ :colspan => '3' }
+      %h3 No-Show
+  = render :partial => 'guests/guest', :collection => @waitlist.guests.noshow
+- reset_cycle('guests')

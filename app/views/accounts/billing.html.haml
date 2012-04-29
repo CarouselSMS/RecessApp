@@ -1,0 +1,48 @@
+%h1= @page_title = 'View / Change Billing Information'
+
+- if @subscription.state == 'trial'
+  %p
+    == Thank you for trying #{AppConfig['app_name']}!
+    - if @subscription.next_renewal_at > Time.now
+      == Your trial account will expire in #{pluralize(@subscription.trial_days, 'day', 'days')}, at which time you will no longer have access to your account.
+      == To maintain access to your account, enter your credit card information below.  
+      == Your first charge will happen on #{@subscription.next_renewal_at.to_s(:long_day)}.
+    - else
+      == Your trial account has expired.
+      == To regain access to your account, enter your credit card information below.
+      == Your first charge will happen immediately, and you will be billed monthly thereafter.
+
+%fieldset
+  %table#billing_info
+    %tr.first-row
+      %th   Plan:
+      %td== #{@subscription.subscription_plan.name} (#{link_to "Change plan", '/account/plan'})
+
+    %tr.first-row
+      %th   Current usage:
+      %td
+        ==  #{current_account.usage} of #{@subscription.prepaid_message_count} prepaid messages
+        - if current_account.overuse > 0
+          == (#{current_account.overuse} message overuse)
+    - if @subscription.state == 'trial'
+      %tr.first-row
+        %th   Trial expiration date:
+        %td=  @subscription.next_renewal_at.to_s(:long_day)
+    - elsif @subscription.amount > 0
+      %tr.first-row
+        %th   Next charge date:
+        %td=  @subscription.next_renewal_at.to_s(:long_day)
+      %tr.first-row
+        %th   Next charge amount:
+        %td
+          =   number_to_currency @subscription.amount
+          - if current_account.overuse > 0
+            == + #{number_to_currency @subscription.overuse_amount} (#{number_to_currency @subscription.subscription_plan.overusage_price} x #{current_account.overuse} message overuse)
+      %tr.first-row
+        %th   Current payment method:
+        %td=  @subscription.paypal? ? 'PayPal' : "#{@subscription.card_number} / #{@subscription.card_expiration}"
+
+- if @subscription.amount > 0
+  - form_for :creditcard, @creditcard, :url => { :action => 'billing' } do |f|
+    = render :partial => 'shared/credit_card_form'
+    = submit_or_cancel '/account', 'Update billing information'

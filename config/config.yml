@@ -1,0 +1,51 @@
+# Used for subscription emails (subscription_notifier.rb)
+app_name:   Recess
+from_email: support@recessapp.com
+
+# Used in account creation (account.rb)
+base_domain: recessapp.com
+
+# Set this to true if you want to require CC info when creating a trial account for a paid plan
+require_payment_info_for_trials: true
+
+# Credit card gateway: One of brain_tree, authorize_net_cim, payment_express, or trust_commerce
+gateway: brain_tree
+
+# Used for accessing the site admin controllers, to manage plans,
+# discounts, etc.  This is prepended to base_domain, so 'admin'
+# here will allow admin.example.com to serve the admin interface.
+admin_subdomain: admin
+
+api_key: 
+
+# Plan the users get when do /signup and bypassing the plan selection
+locals_plan_name: Recess Subscription
+
+
+# Affiliates:
+# Default affiliate percent
+affiliate_percent: 20
+
+# Name of cookie, using for tracking users
+reference_cookie_name: reference_id
+
+# Default affiliate cookie lifetime (days)
+reference_registration_span: 30
+
+
+# Used for signup form metrics
+partial_form_recipient: 
+
+
+# -------------------------------------------------------------------------------------------------
+
+staging:
+  base_domain:  
+  app_name:     Recess (Staging)
+  from_email:   
+  api_key:      
+
+development:
+  base_domain:  recessapp.local
+  from_email:   
+  api_key:      

@@ -1,0 +1,22 @@
+<%= @page_title = "Help &amp; Support" %>
+<% content_for :description_header, "Recess Help, Support &amp; Frequently Asked Questions" %>
+<% content_for :header_class, "help-header" %>
+
+<% content_for :subpagetopcontent do %>
+  <%= render(:partial =>  "subpagetopcontent", :locals => { :header => "Help" })  %>
+<% end %>
+
+<% content_for :subpageleftcontent do %>
+
+  <%= render(:partial =>  "help_content") %>
+
+    </div> <!-- #subpage-left -->
+</div><!-- #subpage-main -->
+<% end %>
+
+<% content_for :subpagesidebar do %>
+<div id="subpage-sidebar" class="content-sidebar">
+  <h3 class="cufonify"><a href="/blog">You may also find our blog helpful.</a></h3>
+</div> <!-- #subpage-sidebar -->
+</div> <!-- missing closing div -->
+<% end %>

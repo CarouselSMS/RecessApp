@@ -1,0 +1,30 @@
+%h1= @page_title = 'Offers'
+%p
+  = link_to "Add an offer", new_offer_path
+  %span.note Limited to 30 characters
+
+- unless @offers.empty?
+  - @offers.each_with_index do |offer, index|
+    .offer
+      .index
+        = index + 1
+      .meta
+        .note
+          Created on
+          = offer.created_at.to_s(:short_day)
+          = link_to "Edit", edit_offer_path(offer)
+          = link_to "Delete", offer_path(offer), :method => :delete, :confirm => "Are you sure?"
+
+      .data
+        %label
+          Name
+        .name= h(offer.name)
+        - unless offer.text.blank?
+          %label
+            Text
+          .text= h(offer.text)
+
+        - unless offer.details.blank?
+          %label
+            More (Rply M for more)
+          .details= sms(offer.details)

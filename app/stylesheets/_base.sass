@@ -1,0 +1,51 @@
+!blueprint_grid_columns = 19
+!blueprint_grid_width = 28px
+!blueprint_grid_margin = 10px
+!blueprint_font_family = "Helvetica Neue", "Helvetica", "Arial", "sans-serif"
+!blueprint_fixed_font_family = "Helvetica Neue", "Helvetica", "Arial", "sans-serif"
+
+!link_color            = #999
+!link_hover_color      = #2b2b2b
+!link_focus_color      = !link_hover_color
+!link_active_color     = !link_hover_color
+!link_visited_color    = !link_color
+!link_color_sky        = #84c2de
+!color_audience_header = #4c4d49
+!color_content         = #626262
+!link_color_audience   = #626262
+!link_hover_audience   = #2b2b2b
+!blue                  = #268bc5
+!subpage_blue          = #3491d1
+!top_nav_bg            = #ebebeb
+!simple_messaging      = #d2d2d2
+!gallery_type          = #a5a5a5
+!gallery_type_hover    = #a6a6a6
+!gallery_border        = #e3e0e0
+!gallery_bg            = #ededed
+!quote_name            = #313131
+!quote_cite            = #878787
+!signed_in             = #2C2C2C
+
+
+@import blueprint.sass
+@import blueprint/modules/scaffolding.sass
+@import compass/reset.sass
+@import compass/utilities.sass
+
+
++blueprint
+// Remove the scaffolding when you're ready to start doing visual design.
+// Or leave it in if you're happy with how blueprint looks out-of-the-box
+// +blueprint-scaffolding
+
+// Opacity mixin - expects a number from 0 to 100
+=opacity(!opacity, !hover_opacity = false)
+  :opacity= !opacity / 100
+  :-moz-opacity= !opacity / 100
+  :-ms-filter= "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{!opacity})"
+  :filter= "alpha(opacity=#{!opacity})"
+  @if !hover_opacity
+    +opacity-hover(!hover_opacity)
+=opacity-hover(!opacity)
+  &:hover
+    +opacity(!opacity)

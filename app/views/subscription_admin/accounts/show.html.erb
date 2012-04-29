@@ -1,0 +1,51 @@
+<h1><%= @page_title = 'View Account' %></h1>
+<table id="account">
+  <tr>
+    <th>Name</th>
+    <td><%= h(@account.name) %></td>
+  </tr>
+  <tr>
+    <th>Domain</th>
+    <td><%= @account.full_domain %></td>
+  </tr>
+  <tr>
+    <th>Created</th>
+    <td><%= @account.created_at.to_s(:short_day) %></td>
+  </tr>
+  <tr>
+    <th>Plan</th>
+    <td><%= link_to(@account.subscription.subscription_plan, [:admin, @account.subscription.subscription_plan]) %></td>
+  </tr>
+  <tr>
+    <th>Lifetime Revenue</th>
+    <td><%= link_to(number_to_currency(@account.subscription_payments.sum(:amount)), [:admin, @account.subscription]) %></td>
+  </tr>
+  <%- if @account.affiliate -%>
+    <tr>
+      <th>Affiliate</th>
+      <td><%= link_to(@account.affiliate.name, [:admin, @account.affiliate]) %></td>
+    </tr>
+  <%- end -%>
+</table>
+
+<h2>Users</h2>
+<table id="users">
+  <tr class="first-row">
+    <th>Name</th>
+    <th>Login</th>
+    <th>E-mail</th>
+    <th>Admin</th>
+    <th></th>
+  </tr>
+  <%- for user in @account.users -%>
+    <tr>
+      <td><%= h(user.name) %></td>
+      <td><%= h(user.login) %></td>
+      <td><%= h(user.email) %></td>
+      <td><%= user.admin? ? "Yes" : "No" %></td>
+      <td>
+        <%= link_to "Login as this user", login_with_user_admin_account_path(@account, :uid => user.id) %>
+      </td>
+    </tr>
+  <%- end -%>
+</table>

@@ -1,0 +1,97 @@
+/* - - - - - - - - - - - - - - - - - - - - -
+
+ Title : Example Custom CSS : DinoMaster!
+ Author : Infinity Box Inc.
+ URL : http://wufoo.com
+
+ Last Updated : September 26, 2007
+
+- - - - - - - - - - - - - - - - - - - - - 
+
+INSTRUCTIONS
+1. Copy / Paste all or portions of these
+CSS rules into "custom.css".
+
+2. Experiment and play.
+
+- - - - - - - - - - - - - - - - - - - - - */
+
+/* - - - Default - - - */
+
+/* Backgrounds */
+body{
+}
+.wufoo {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#container{background: transparent}
+.wufoo input.text, .wufoo textarea.textarea {
+	border:1px solid #BBBBBB;
+	margin:0;
+	padding:4px;
+	background: #FFF;
+}
+.wufoo input.text:focus, .wufoo textarea.textarea:focus {
+	border:1px solid #666666;
+}
+.wufoo .focused{}
+.wufoo .instruct{background-color:#F5F5F5}
+
+/* Borders */
+#container{border:0 solid #cccccc}
+.wufoo .info{border-bottom:1px dotted #CCCCCC}
+.wufoo .section{border-top:1px dotted #CCCCCC}
+.wufoo .instruct{border:1px solid #e6e6e6}
+
+/* Typography */
+.wufoo .info h2{
+	font-weight: 700;
+	font-size:2em;
+	margin-bottom:0;
+	color: #3491D1
+}
+
+.wufoo .info p{
+	color:#626262;
+	text-align:left;
+}
+.wufoo .section h3{font-size:110%;font-family:inherit;background:#FFF;color:#626262;}
+.wufoo .section p{font-size:85%;font-family:inherit;color:#626262;}
+.wufoo label.desc{font-size:95%;font-family:inherit;color:#626262;}
+.wufoo li div, .wufoo li div label, .wufoo li span label{font-family:inherit;color:#626262;margin-right:1em;}
+.wufoo input.text, .wufoo textarea.textarea, .wufoo select.select, .wufoo label.choice{}
+.wufoo select:focus {border:1px solid #666666;}
+.wufoo label.choice{color:#626262}
+.wufoo .instruct{font-size:100%;font-family:inherit;color:#626262;}
+.wufoo .instruct small{font-size:100%}
+
+
+/* Drop Shadows */
+#top, #bottom{visibility:visible}
+
+.wufoo .buttons input#saveForm {
+	border:0px solid #FFFFFF;
+	font-size:120%;
+	height:24px;
+	margin-right:5px;
+	text-indent:-9000px;
+	width:81px;
+	font-size: 0px;
+	display:block;
+	line-height: 0px;
+	overflow: hidden;
+	background:transparent url('http://www.recessapp.com/images/submit-sprite.png') repeat scroll 0 0;
+	cursor: pointer;
+}
+.wufoo .buttons input#saveForm:hover {
+	background:transparent url('http://www.recessapp.com/images/submit-sprite.png') repeat scroll 0 24px;
+}
+#errorLi {
+-moz-border-radius-bottomleft:0;
+-moz-border-radius-bottomright:0;
+-moz-border-radius-topleft:0;
+-moz-border-radius-topright:0;
+}
+.wufoo form li.buttons {
+  cursor: pointer;
+}
