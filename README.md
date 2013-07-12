@@ -7,7 +7,7 @@ Send SMS reminders when a table is ready at a restaurant, or anywhere customers 
 ##### Notes
 
 * It's a Rails 2.3.4 app.
-* Email <yury@recessmobile.com> with questions.
+* Email <yury@carouselsms.com> with questions.
 
 #### Screenshots
 
@@ -35,5 +35,11 @@ Send SMS reminders when a table is ready at a restaurant, or anywhere customers 
 
 [![statistics](http://dl.dropbox.com/u/225019/rm-app-screenshots/RecessApp/thumb_Statistics%20-%20Recess.png)](http://dl.dropbox.com/u/225019/rm-app-screenshots/RecessApp/Statistics%20-%20Recess.png)
 
+License
+=======
+
+The Recess Paging System is Copyright © 2013 [Recess Mobile](http://recess.im/).
+
+It is free software, and may be redistributed under the terms specified in the MIT-LICENSE file.
 
 
