@@ -13,7 +13,7 @@ Send SMS reminders when a table is ready at a restaurant, or anywhere customers 
 
 ###### Website
 
-[![home](https://dl.dropboxusercontent.com/u/225019/rm-app-screenshots/RecessApp/thumb_Text%20message%20waitlist%20management%20%7C%20Recess%202.png)](http://dl.dropbox.com/u/225019/rm-app-screenshots/RecessApp/Text%20message%20waitlist%20management%20%7C%20Recess%202.png)
+[![home](https://dl.dropboxusercontent.com/u/225019/rm-app-screenshots/RecessApp/thumb_Text%20message%20waitlist%20management%20%7C%20Recess%202.png)](https://dl.dropboxusercontent.com/u/225019/rm-app-screenshots/RecessApp/Text%20message%20waitlist%20management%20%7C%20Recess%202.png)
 
 [![features page](http://dl.dropbox.com/u/225019/rm-app-screenshots/RecessApp/thumb_Features%20%26%20Benefits%20%7C%20Recess%202.png)](http://dl.dropbox.com/u/225019/rm-app-screenshots/RecessApp/Features%20%26%20Benefits%20%7C%20Recess%202.png)
 
